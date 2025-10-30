@@ -43,6 +43,8 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
 
+## Changelogs
+
 ## Notes and Post Scripts
 
 <sub><i>~~Managed to fucked up the mobile menu, so here's a snake with 1 functional brain cell.~~</i></sub>
