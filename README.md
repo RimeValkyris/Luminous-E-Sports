@@ -2,8 +2,23 @@
 
 Web Development Case Study for IT Department Technical Service Management Major, Midterm and Final Term
 
-Project Theme: E-Sports Team Website
-Website Title: Luminous E-Sports
+- **Project Theme:** E-Sports Team Website  
+- **Website Title:** Luminous E-Sports
+
+<p align="left">The Luminous E-Sports Website is an interactive website that is created by 7 developers to promote and represent an E-Sport Organization. This website will serve as an online hub wherein e-sport players, fans, and sponsors can find updates about tournaments, the E-Sports Team, and its upcoming events/matches. <br><br>The website’s purpose is to promote the E-Sports team, and it will serve as an official website for the team’s updates, events, and information. This website aims to highlight the achievements of the team, showcase the team roster in each game, and provide a schedule for upcoming tournaments and competitions.<br><br>The website’s target audience is for E-Sports players, fans, and sponsors who are interested in competitive gaming. It also targets fans who want to follow and support the team’s journey, learn about their upcoming matches, or fans who want to join them in their journey. <br><br>And lastly, the Luminous E-Sports website brings all important information about the team into one easily accessible platform, which is the website where you can access it anywhere using your PC, Laptop, or even your mobile devices. This keeps fans updated with the news, results of the team, upcoming merchandise, and important announcements.</p>
+
+## Project Objectives
+- **Designing:** Sketch, wireframes, mockups, and prototypes to plan and layout the website.  
+- **Responsive UI:** Design a user interface suitable for desktops, laptops, and mobile devices.  
+- **Website Development:** Create a static website for an E-Sports Organization named **Luminous E-Sports**, following this architecture:
+  - **End User**
+    - Home Page  
+    - About Page  
+    - Teams Page  
+    - News Page  
+    - Career Page  
+    - Merchandise Page  
+- **Aesthetics:** Develop a visually appealing and easy-to-navigate website.
 
 ## Languages Used
 
