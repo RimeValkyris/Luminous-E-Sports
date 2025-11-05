@@ -84,6 +84,61 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* Site header and navigation */
+.site-header {
+  background: #0f1724; /* dark navy */
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+.logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.main-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 3px;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+}
+
+/* Responsive: stack nav items on small screens */
+@media (max-width: 600px) {
+  .site-header .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
