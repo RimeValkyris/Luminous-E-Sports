@@ -52,6 +52,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - Integrated Hamburger Menu for the Tablet and Mobile Device for proper navigation rules
 - Fixed the problem with the image routing that made the image not load during deployment
 - applied the Navigation Menu and The Footer to all Webpages
+- Removed Test Variable Image in About Page
 
 
 ## Notes and Post Scripts
