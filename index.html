@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luminous E-Sports</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -27,30 +30,72 @@
 </head>
 
 <body>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">Isolation Forest</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/teams.html">Teams</a></li>
-          <li><a href="pages/news.html">News</a></li>
-          <li><a href="pages/career.html">Career</a></li>
-          <li><a href="pages/merchandise.html">Merchandise</a></li>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="img/Luminouslogo.png" alt="Luminous E-Sports Logo"></a>
+      </div>
+      <div class="hamburger" role="button" aria-label="Toggle navigation" aria-expanded="false" tabindex="0">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="pages/about.html">ABOUT</a></li>
+          <li><a href="pages/teams.html">TEAMS</a></li>
+          <li><a href="pages/news.html">NEWS</a></li>
+          <li><a href="pages/merchandise.html">SHOP</a></li>
+          <li><a href="pages/career.html">CAREER</a></li>
         </ul>
-      </nav>
-    </div>
+        <ul class="social-links">
+          <li><a href="#"><img src="img/facebook.png" alt="Facebook"></a></li>
+          <li><a href="#"><img src="img/twitch.png" alt="Twitch"></a></li>
+          <li><a href="#"><img src="img/discord.png" alt="Discord"></a></li>
+          <li><a href="#"><img src="img/youtube.png" alt="YouTube"></a></li>
+          <li><a href="#"><img src="img/x.png" alt="X"></a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
-
   <main>
-    <div class="container">
-      <!-- Add your site or application content here -->
-      <p>Hello world! This is HTML5 Boilerplate.</p>
-      <img src="img/Jing.jpg" alt="Jing the cat sitting on a tree branch">
-    </div>
+    
   </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html"><img src="img/Luminouslogo.png" alt="Luminous E-Sports Logo"></a>
+          <p class="footer-tag">“Founded in 2021, Luminous has grown into a world-renowned professional gaming organization, recognized for excellence, innovation, and dominance across multiple esports titles.”</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="pages/about.html">ABOUT</a></li>
+            <li><a href="pages/teams.html">TEAMS</a></li>
+            <li><a href="pages/news.html">NEWS</a></li>
+            <li><a href="pages/merchandise.html">SHOP</a></li>
+            <li><a href="pages/career.html">CAREER</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="footer-bottom">
+        <div class="copyright">Luminous E-Sports</div>
+        <div class="footer-bottom-social">
+          <ul>
+            <li><a href="#"><img src="img/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="img/twitch.png" alt="Twitch"></a></li>
+            <li><a href="#"><img src="img/discord.png" alt="Discord"></a></li>
+            <li><a href="#"><img src="img/youtube.png" alt="YouTube"></a></li>
+            <li><a href="#"><img src="img/x.png" alt="X"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/app.js"></script>
 
