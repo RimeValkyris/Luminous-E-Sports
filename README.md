@@ -44,6 +44,15 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
 
 ## Changelogs
+### 11/15/2025
+- Added Navigation Menu
+- Made the Navigation Menu Responsive in all Devices
+- Added Footer
+- Made the Footer Responsive in all Devices
+- Integrated Hamburger Menu for the Tablet and Mobile Device for proper navigation rules
+- Fixed the problem with the image routing that made the image not load during deployment
+- applied the Navigation Menu and The Footer to all Webpages
+
 
 ## Notes and Post Scripts
 
