@@ -528,6 +528,10 @@ main {
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1.8px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover {
+  color: #ffffff;
 }
 .footer-divider {
   border: 0;
