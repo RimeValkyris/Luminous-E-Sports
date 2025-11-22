@@ -37,7 +37,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 ## Authors and Contributors
 
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
-- [@RimeValkyris](https://www.github.com/RimeValkyris)
+- [@Gale-Carl23](https://www.github.com/RimeValkyris)
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
 - [@RimeValkyris](https://www.github.com/RimeValkyris)
