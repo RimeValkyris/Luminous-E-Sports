@@ -1,0 +1,42 @@
+body{
+    height: 5000px;
+}
+.banner-container{
+  margin-top: 70px;
+  background-color: #b3d4fc;
+  
+  text-align: center;
+  height: 210px;
+  color: #000;
+  font-size: 30px;
+  font-family: "Wix Madefor Display", sans-serif;
+  padding-top: 15px;
+
+}
+.img-container{
+    margin: 85px 85px 0px 85px;
+    height: 560px;
+    background-color: grey;
+    
+}
+.M-big-container{
+    margin: 0px 45px;
+}
+.M-sub-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 60px;
+
+    
+}
+.M-small-container{
+    background-color: grey;
+    height:500px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.small-img-container{
+    background-color: antiquewhite;
+    height: 400px;
+}
