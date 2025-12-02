@@ -17,10 +17,6 @@ html {
   line-height: 1.4;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -88,9 +84,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  /* Gradient background: top (dark navy) -> bottom (deep blue) */
-  background-color: #091221; /* fallback */
-  background-image: linear-gradient(180deg, #091221 0%, #21345C 100%);
+  /* Gradient background: top (dark navy) -> bottom (medium dark blue) */
+  background-color: #070B18; /* fallback */
+  background-image: linear-gradient(180deg, #070B18 0%, #182A45 100%);
   color: #e0e0e0;
   font-family: 'Exo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -99,7 +95,6 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* prevent stray horizontal gaps on mobile */
 }
 
 main {
@@ -110,7 +105,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0B0F29;
+  /* slightly darker than before for stronger contrast */
+  background-color: #040516;
   padding: 1em 2em;
   border-bottom: none;
   position: relative;
@@ -162,6 +158,14 @@ main {
     transform: translate(-50%, -50%);
     pointer-events: auto;
     z-index: 20;
+  }
+  /* place the logo on the left side of the header on desktop */
+  .navbar-logo {
+    position: static;
+    justify-content: flex-start;
+    z-index: 30;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -232,6 +236,12 @@ main {
   .navbar-logo {
     justify-content: center;
   }
+  /* Ensure a consistent header height on mobile so elements can be
+     centered reliably and the mobile overlay can offset correctly. */
+  .navbar {
+    min-height: 64px;
+    padding: 0 1.5rem; /* reduce vertical padding to rely on min-height */
+  }
   /* Position the hamburger as a right-side pill and vertically center it */
   .hamburger {
     position: absolute;
@@ -273,26 +283,46 @@ main {
   }
   .nav-menu {
     position: fixed;
-    left: -100vw;
-    right: 0;
+    left: -100%;
     top: 0;
-    padding-top: 70px; /* reserve space for header so items sit below it */
+    padding-top: 64px; /* reserve space for header so items sit below it */
     flex-direction: column;
     background-color: #0B0F29;
-    width: 100vw;
-    max-width: 100vw;
-    height: 100vh;
+    width: 100%;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    overflow-y: auto;
+    z-index: 1000; /* ensure mobile menu sits above page content */
+  }
+
+  /* Position the logo centered in the mobile overlay and above the close button */
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    /* vertically center the logo within the header to avoid overlap
+       with the hamburger and to match desktop alignment */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002; /* above .nav-menu (1000) and hamburger (1001) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  /* Slightly reduce logo size inside the overlay to fit the header */
+  .navbar-logo img {
+    height: 46px;
+    width: auto;
+    display: block;
   }
 
   /* ensure hamburger is visible on mobile */
-  .hamburger { display: flex; }
+  .hamburger { display: flex; z-index: 1001; }
 
   .nav-menu.active {
     left: 0;
+    z-index: 1000;
   }
 
   .nav-links {

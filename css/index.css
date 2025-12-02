@@ -3,10 +3,14 @@
 .hero-carousel {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   height: 65vh;
   min-height: 320px;
   margin: 1.5rem auto 0;
+  /* ensure padding is included in width calculations so the rounded corners don't get clipped */
+  box-sizing: border-box;
+  /* match page content gutters so the hero doesn't touch the viewport edge */
+  padding: 0 1.25rem;
   overflow: hidden;
   background: #0B0F29;
   border-radius: 14px;
@@ -128,6 +132,134 @@
   transform: scale(1.2);
 }
 
+/* News highlight section */
+.news-highlight {
+  /* match hero width so the background reaches the same page margins */
+  margin: 3.5rem 0 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: linear-gradient(180deg, rgba(6,12,30,0.95), rgba(7,15,43,0.92));
+  border-radius: 0;
+  box-shadow: 0 20px 45px rgba(2,6,20,0.55);
+}
+
+.news-highlight__intro {
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto 2.5rem 0;
+}
+
+.news-highlight__eyebrow {
+  color: #FC0369;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.65rem;
+  font-size: 0.85rem;
+}
+
+.news-highlight__intro h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(1.9rem, 2.5vw, 2.8rem);
+  margin: 0 0 0.75rem;
+}
+
+.news-highlight__summary {
+  color: #b9c2d6;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.news-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 500px));
+  gap: 1.25rem;
+  /* Make each row's tracks stretch so cards in the same row equalize height */
+  grid-auto-rows: 1fr;
+  justify-content: center;
+}
+
+.news-card {
+  background: linear-gradient(145deg, rgba(7, 15, 43, 0.95), rgba(6, 12, 36, 0.9));
+  border: 1px solid rgba(86, 112, 255, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(3, 7, 18, 0.45);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* Ensure the card fills the grid cell so all cards in a row share the same height */
+  height: 100%;
+}
+
+.news-card__image {
+  width: 100%;
+  height: 190px;
+  flex: 0 0 190px;
+  overflow: hidden;
+}
+
+.news-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* allow body to grow and push CTA to the bottom */
+  flex: 1 1 auto;
+}
+
+.news-card__body h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.news-card__body p {
+  margin: 0;
+  color: #cbd3e6;
+  line-height: 1.65;
+}
+
+.news-card__cta {
+  margin-top: auto;
+  align-self: flex-start;
+  color: #ff488f;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(255, 72, 143, 0.4);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.news-card__cta:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 72, 143, 0.8);
+  background: rgba(255, 72, 143, 0.1);
+}
+
+@media (max-width: 768px) {
+  .news-highlight {
+    padding: 0 1rem 3rem;
+  }
+
+  .news-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card__image {
+    height: 200px;
+  }
+}
+
 /* Responsive carousel */
 @media (max-width: 768px) {
   .hero-carousel {
@@ -194,5 +326,342 @@
   .dot {
     width: 10px;
     height: 10px;
+  }
+}
+
+/* Tournament Section */
+/* ========================================================================== */
+.tournament-section {
+  max-width: 1200px;
+  margin: 3.5rem auto 0;
+  padding: 0 1.25rem 4rem;
+}
+
+.tournament-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+}
+
+/* Match Schedule */
+.match-schedule h2 {
+  color: #e0e0e0;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.match-item {
+  background: linear-gradient(145deg, rgba(7, 15, 43, 0.95), rgba(6, 12, 36, 0.9));
+  border: 2px solid #1e3a8a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.game-type {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.match-time {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.match-date {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.placeholder-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-logo.green {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.placeholder-logo.red {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.placeholder-logo.orange {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.vs {
+  color: #FC0369;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+}
+
+/* Tournament Standing */
+.tournament-standing {
+  background: linear-gradient(145deg, rgba(7, 15, 43, 0.95), rgba(6, 12, 36, 0.9));
+  border: 2px solid #1e3a8a;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.standing-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.trophy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  /* no border outline */
+  box-shadow: 0 6px 18px rgba(2,6,20,0.45);
+  background: linear-gradient(180deg, rgba(10,10,10,0.55), rgba(24,24,24,0.65));
+}
+
+.trophy-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Background variants (approximate colors from attachments) */
+.trophy--yellow { background: linear-gradient(180deg,#3b3a05,#2a2a00); }
+.trophy--silver { background: linear-gradient(180deg,#8f98a3,#6f7680); }
+.trophy--bronze { background: linear-gradient(180deg,#4a2e20,#2f1b15); }
+.trophy--muted { background: linear-gradient(180deg,#1a1a1a,#0f1113); }
+.trophy--accent { background: linear-gradient(180deg,#0b1b33,#071226); }
+
+/* Tweak icon coloring inside variants using filters so the trophy line stands out */
+.trophy--yellow .trophy-icon { filter: brightness(1.7) saturate(2) hue-rotate(20deg); }
+.trophy--silver .trophy-icon { filter: grayscale(1) brightness(1.6) contrast(1.1); }
+.trophy--bronze .trophy-icon { filter: sepia(1) hue-rotate(15deg) saturate(0.8) brightness(0.9); }
+.trophy--muted .trophy-icon { filter: brightness(0.6) contrast(1.1); }
+.trophy--accent .trophy-icon { filter: brightness(1) contrast(1.05); }
+
+.standing-header h2 {
+  color: #e0e0e0;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.standing-list {
+  margin-bottom: 2rem;
+}
+
+.standing-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.standing-item:last-child {
+  border-bottom: none;
+}
+
+.standing-points {
+  color: #b9c2d6;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+  min-width: 56px;
+  text-align: right;
+}
+
+.rank-badge {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.rank-badge.gold {
+  filter: sepia(1) hue-rotate(45deg) saturate(2) brightness(1.1);
+}
+
+.rank-badge.silver {
+  filter: grayscale(1) brightness(1.5) contrast(1.2);
+}
+
+.rank-badge.bronze {
+  filter: sepia(1) hue-rotate(25deg) saturate(1.5) brightness(0.9);
+}
+
+.rank-badge:not(.gold):not(.silver):not(.bronze) {
+  filter: brightness(0.7) contrast(1.5);
+}
+
+.team-name {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.tournament-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-group {
+  text-align: center;
+}
+
+.stat-number {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.stat-label {
+  color: #b0b0b0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stat-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.prize-pool, .status {
+  text-align: center;
+}
+
+.prize-amount {
+  color: #22c55e;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.prize-label {
+  color: #b0b0b0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-indicator {
+  color: #ef4444;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.status-label {
+  color: #b0b0b0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Responsive Tournament Section */
+@media (max-width: 1024px) {
+  .tournament-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tournament-standing {
+    max-width: none;
+  }
+  
+  /* Tablet: show two news cards per row */
+  .news-card-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+/* Small phones: force single column so cards stack cleanly */
+@media (max-width: 480px) {
+  .news-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .news-card {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tournament-section {
+    padding: 0 1rem 3rem;
+  }
+  
+  .match-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .match-teams {
+    justify-content: center;
+  }
+  
+  .tournament-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
