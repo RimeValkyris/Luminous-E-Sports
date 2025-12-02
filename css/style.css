@@ -105,8 +105,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* slightly darker than before for stronger contrast */
-  background-color: #040516;
+  /* match the page background for seamless header */
+  background-color: #070B18;
   padding: 1em 2em;
   border-bottom: none;
   position: relative;
