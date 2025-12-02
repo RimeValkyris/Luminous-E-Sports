@@ -17,6 +17,10 @@ html {
   line-height: 1.4;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -95,6 +99,7 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* prevent stray horizontal gaps on mobile */
 }
 
 main {
@@ -268,14 +273,19 @@ main {
   }
   .nav-menu {
     position: fixed;
-    left: -100%;
-    top: 70px;
+    left: -100vw;
+    right: 0;
+    top: 0;
+    padding-top: 70px; /* reserve space for header so items sit below it */
     flex-direction: column;
     background-color: #0B0F29;
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
   }
 
   /* ensure hamburger is visible on mobile */
@@ -477,6 +487,9 @@ main {
 
 
 /* ========================================================================== */
+/* Footer styles */
+/* ========================================================================== */
+
 /* Footer styles */
 /* ========================================================================== */
 .site-footer {

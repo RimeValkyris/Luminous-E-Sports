@@ -33,3 +33,62 @@ window.addEventListener('resize', () => {
     toggleMenu();
   }
 });
+
+// Carousel functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+  // Remove active class from all slides and dots
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  // Add active class to current slide and dot
+  if (slides[index]) {
+    slides[index].classList.add('active');
+  }
+  if (dots[index]) {
+    dots[index].classList.add('active');
+  }
+}
+
+function changeSlide(direction) {
+  currentSlideIndex += direction;
+  
+  // Loop around if we go past the bounds
+  if (currentSlideIndex >= slides.length) {
+    currentSlideIndex = 0;
+  } else if (currentSlideIndex < 0) {
+    currentSlideIndex = slides.length - 1;
+  }
+  
+  showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+  currentSlideIndex = index - 1; // Convert to 0-based index
+  showSlide(currentSlideIndex);
+}
+
+// Auto-play carousel (optional)
+function autoSlide() {
+  changeSlide(1);
+}
+
+// Start auto-play when carousel exists
+if (slides.length > 0) {
+  // Auto-advance every 5 seconds
+  setInterval(autoSlide, 5000);
+}
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+  if (slides.length > 0) {
+    if (e.key === 'ArrowLeft') {
+      changeSlide(-1);
+    } else if (e.key === 'ArrowRight') {
+      changeSlide(1);
+    }
+  }
+});

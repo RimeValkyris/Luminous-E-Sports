@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luminous E-Sports</title>
   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
@@ -62,8 +63,59 @@
 
 <!--START MAIN BODY HERE!!!-->
   <main>
-    
-
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img src="img/Carousel-1.png" alt="Focused and Ready for Battle">
+          <div class="carousel-content">
+            <h2>Focused and Ready for Battle</h2>
+            <p>Preparation meets precision</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-2.jpg" alt="Teamwork in Action">
+          <div class="carousel-content">
+            <h2>Teamwork in Action</h2>
+            <p>Stronger together</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-3.jpg" alt="Intense In-Game Moments">
+          <div class="carousel-content">
+            <h2>Intense In-Game Moments</h2>
+            <p>Every click counts</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-4.jpg" alt="On the Big Stage">
+          <div class="carousel-content">
+            <h2>On the Big Stage</h2>
+            <p>Where champions are made</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="carousel-btn next" onclick="changeSlide(1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <!-- Dot Indicators -->
+      <div class="carousel-dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </section>
     
   </main>
 <!--END MAIN BODY HERE!!!-->
