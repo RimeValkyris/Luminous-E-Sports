@@ -289,12 +289,21 @@ main {
     flex-direction: column;
     background-color: #0B0F29;
     width: 100%;
+    height: 100vh; /* cover the entire viewport */
+    overflow-y: auto; /* allow scrolling if menu exceeds viewport */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    z-index: 1000; /* ensure mobile menu sits above page content */
+    z-index: 9999; /* sit above all page content */
   }
 
+    /* Removed mobile overlay logo */
+
+  /* When overlay is open, hide the header logo to avoid duplication */
+  /* Hide large header logo when overlay is open */
+  body.overlay-open .navbar-logo { display: none; }
+  body.overlay-open .navbar { background-color: #0B0F29; }
+  body.overlay-open { overflow: hidden; }
   /* Position the logo centered in the mobile overlay and above the close button */
   .navbar-logo {
     position: absolute;

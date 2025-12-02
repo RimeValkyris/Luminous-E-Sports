@@ -7,6 +7,12 @@ function toggleMenu() {
   navMenu.classList.toggle("active");
   // update aria for accessibility
   hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
+  // mark overlay state on body to control logo visibility
+  if (isActive) {
+    document.body.classList.add('overlay-open');
+  } else {
+    document.body.classList.remove('overlay-open');
+  }
 }
 
 if (hamburger) {
