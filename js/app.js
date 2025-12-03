@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-links a");
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function toggleMenu() {
   const isActive = hamburger.classList.toggle("active");
@@ -38,6 +39,28 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 1024 && navMenu.classList.contains('active')) {
     toggleMenu();
   }
+});
+
+// Respect reduced motion for any counting animations that may be present
+document.addEventListener('DOMContentLoaded', () => {
+  if (prefersReducedMotion) return;
+  const counters = document.querySelectorAll('.stat-number, .prize-amount');
+  counters.forEach(el => {
+    const text = el.textContent.trim();
+    const isMoney = /\$/.test(text);
+    const target = parseInt(text.replace(/[^\d]/g, ''), 10);
+    let current = 0;
+    const duration = 1200;
+    const step = Math.max(1, Math.round(target / (duration / 20)));
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = isMoney ? `$${current}${text.endsWith('K') ? 'K' : ''}` : `${current}`;
+    }, 20);
+  });
 });
 
 // Carousel functionality

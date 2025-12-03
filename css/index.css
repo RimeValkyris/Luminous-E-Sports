@@ -1,6 +1,30 @@
 /* Hero Carousel styles */
 /* ========================================================================== */
 
+:root {
+  --font-sans: "Exo 2", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-display: "League Spartan", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --fs-100: 0.875rem;
+  --fs-200: 1rem;
+  --fs-300: 1.125rem;
+  --fs-400: 1.5rem;
+  --fs-500: 2rem;
+  --fs-600: 2.5rem;
+  --fs-700: 4rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-200);
+  line-height: 1.6;
+}
+
+h1, .h1 { font-family: var(--font-display); font-size: var(--fs-700); line-height: 1.1; }
+h2, .h2 { font-family: var(--font-display); font-size: var(--fs-600); line-height: 1.15; }
+h3, .h3 { font-family: var(--font-display); font-size: var(--fs-500); line-height: 1.2; }
+h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-height: 1.25; }
+
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -63,39 +87,22 @@
   max-width: 600px;
 }
 
-.carousel-content h2 {
-  font-family: "Exo 2", sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0 0 10px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  line-height: 1.2;
-}
-
-.carousel-content p {
-  font-family: "Exo 2", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  opacity: 0.9;
-}
 
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(252, 3, 105, 0.8);
-  border: none;
+      padding: 0.5rem 0.5rem 0.75rem;
   color: white;
   width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      line-height: 1.05;
   z-index: 3;
   display: flex;
-  align-items: center;
-  justify-content: center;
+      font-size: 0.75rem;
+      padding: 0.18rem 0.4rem;
   transition: all 0.3s ease;
 }
 
@@ -701,14 +708,16 @@
     min-height: 420px;
     background-image: url('../img/MobileTeams.png');
     background-size: cover;
+    background-position: center top;
     align-items: flex-start;
   }
 
   .teams-feature__content {
-    padding: 36px 28px 48px;
+    padding: 36px 20px 48px;
     gap: 16px;
     justify-content: flex-start;
     padding-top: 60px;
+    max-width: 100%;
   }
 
   .teams-feature__badge {
@@ -719,14 +728,17 @@
   }
 
   .teams-feature__heading {
-    font-size: 2.3rem;
-    letter-spacing: 3.5px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
     text-align: left;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .teams-feature__description {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     text-align: left;
+    text-wrap: pretty;
   }
 
   .teams-feature__games {
@@ -734,6 +746,24 @@
     letter-spacing: 1.4px;
     gap: 10px;
     justify-content: flex-start;
+  }
+}
+
+/* Extra small screens: tighten heading further */
+@media (max-width: 480px) {
+  .teams-feature__heading {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    line-height: 1.05;
+  }
+  .teams-feature__badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+  .teams-feature__content {
+    padding-top: 52px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -867,7 +897,7 @@
 
 .teams-feature__heading {
   font-family: "Exo 2", sans-serif;
-  font-size: 38pt;
+  font-size: 3rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
@@ -1011,11 +1041,13 @@
 .testimonial-card__text {
   font-family: "Exo 2", sans-serif;
   font-size: 1rem;
-  color: #cbd3e6;
+  color: #e6ebff;
   line-height: 1.7;
   margin: 0;
   font-style: italic;
   flex: 1;
+  max-width: 65ch;
+  text-wrap: pretty;
 }
 
 .testimonial-card__author {
@@ -1093,7 +1125,10 @@
   }
 
   .testimonial-card__text {
-    font-size: 0.95rem;
+    font-size: var(--fs-200);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    hyphens: auto;
   }
 
   .testimonial-card__avatar {
@@ -1171,6 +1206,15 @@
   gap: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
+}
+/* Accessible focus styles */
+a, button {
+  outline: none;
+}
+a:focus-visible,
+button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.7);
+  border-radius: 6px;
 }
 
 .social-card {
