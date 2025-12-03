@@ -98,3 +98,54 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+// Animated counter for tournament stats
+function animateCounter(element, target, duration = 2000, prefix = '', suffix = '') {
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = prefix + target + suffix;
+      clearInterval(timer);
+    } else {
+      element.textContent = prefix + Math.floor(current) + suffix;
+    }
+  }, 16);
+}
+
+// Initialize counters when page loads
+window.addEventListener('DOMContentLoaded', () => {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const prizeAmount = document.querySelector('.prize-amount');
+  
+  // Create an Intersection Observer to trigger animation when visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated');
+        const target = parseInt(entry.target.textContent);
+        animateCounter(entry.target, target, 2000);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  statNumbers.forEach(stat => observer.observe(stat));
+  
+  // Animate prize pool separately with $ prefix and K suffix
+  if (prizeAmount && !prizeAmount.classList.contains('animated')) {
+    const prizeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+          entry.target.classList.add('animated');
+          animateCounter(entry.target, 50, 2000, '$', 'K');
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    prizeObserver.observe(prizeAmount);
+  }
+});
+
