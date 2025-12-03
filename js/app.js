@@ -34,6 +34,46 @@ navLinks.forEach(link => {
   });
 });
 
+// Timeline: animate items and draw vertical line when items enter viewport
+document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.timeline-item');
+  const line = document.querySelector('.timeline-line');
+
+  if (!items || items.length === 0) return;
+
+  // If user prefers reduced motion, reveal everything immediately
+  if (prefersReducedMotion) {
+    items.forEach(i => i.classList.add('in-view'));
+    if (line) line.classList.add('drawn');
+    return;
+  }
+
+  // Track scroll direction so animations trigger only when scrolling down
+  let lastScrollY = window.scrollY || window.pageYOffset || 0;
+  let scrollDirection = 'down';
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY || window.pageYOffset || 0;
+    scrollDirection = (currentY > lastScrollY) ? 'down' : 'up';
+    lastScrollY = currentY;
+  }, { passive: true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Only activate animations when user is scrolling downwards
+        if (scrollDirection === 'down') {
+          entry.target.classList.add('in-view');
+          // add drawn class to line the first time any item becomes visible
+          if (line) line.classList.add('drawn');
+        }
+      }
+    });
+  }, { threshold: 0.18 });
+
+  items.forEach(item => io.observe(item));
+});
+
 // Close mobile menu when resizing to larger screens
 window.addEventListener('resize', () => {
   if (window.innerWidth > 1024 && navMenu.classList.contains('active')) {
