@@ -2,25 +2,55 @@ body{
     height: 5000px;
 }
 .banner-container{
-  margin-top: 70px;
+  margin-top: 20px;
   background-color: #b3d4fc;
+  height: 220px;
+  position: relative;
   
-  text-align: center;
-  height: 210px;
-  color: #000;
-  font-size: 30px;
-  font-family: "Wix Madefor Display", sans-serif;
-  padding-top: 15px;
+  
 
 }
+.banner-text{
+    position:absolute ;
+    left: 480px;
+    top: 70px;
+    font-family: "Wix Madefor Display", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+.banner-image{
+    width: 100%;
+    height: 100%;
+}
 .img-container{
-    margin: 85px 85px 0px 85px;
+    margin: 120px 100px 0px 100px;
     height: 560px;
     background-color: grey;
+    position: relative;
     
 }
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-text{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-weight: bold;
+    line-height: 20px;
+}
 .M-big-container{
-    margin: 0px 45px 40px 45px;
+    margin: 0px 45px;
+    font-family: "Wix Madefor Display", sans-serif;
+
+}
+.M-big-container h1{
+    font-size: 50px;
+    color: white;
+    margin-left: 50px;
 }
 .M-sub-container{
     display: grid;
@@ -30,13 +60,30 @@ body{
     
 }
 .M-small-container{
-    background-color: grey;
-    height:500px;
-    border-radius: 10px;
+     background-color: rgb(13, 21, 32);
+    height:550px;
+    border-radius: 20px;
     overflow: hidden;
-    
+    border: 1px solid rgb(22, 83, 239);
 }
 .small-img-container{
     background-color: antiquewhite;
     height: 400px;
+    overflow: hidden;
+}
+.small-img-container img{
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+}
+.small-text-container{
+    line-height: 10px;
+   margin-top: 40px;
+   margin-left: 10px;
+}
+.small-img-container h2{
+    font-size: 60px;
+}
+.small-text-container p{
+    font-size: 14px;
 }
