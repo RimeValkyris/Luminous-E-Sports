@@ -661,6 +661,39 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
   .news-card-grid {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
+
+  /* Featured Team responsive at tablet size */
+  .teams-feature {
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+
+  .teams-hero__title {
+    font-size: 1.35rem;
+    letter-spacing: 3px;
+  }
+
+  .teams-feature__card {
+    min-height: 320px;
+  }
+
+  .teams-feature__content {
+    padding: 50px 50px 60px;
+    max-width: 700px;
+    gap: 18px;
+  }
+
+  .teams-feature__heading {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .teams-feature__description {
+    font-size: 1.05rem;
+  }
+
+  .teams-feature__games {
+    font-size: 0.9rem;
+  }
 }
 
 /* Added missing tablet media query for footer */
@@ -689,56 +722,109 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
     gap: 1rem;
   }
 
+  .teams-feature {
+    padding: 2rem 1rem 3rem;
+    margin: 2.5rem 0 0;
+  }
+
+  .teams-hero {
+    margin-bottom: 2rem;
+  }
+
+  .teams-hero__title {
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+  }
+
+  .teams-feature__card {
+    min-height: 300px;
+    border-radius: 12px;
+  }
+
   .teams-feature__content {
-    padding: 48px 44px 60px;
+    padding: 40px 32px 50px;
     max-width: none;
+    gap: 16px;
+  }
+
+  .teams-feature__badge {
+    font-size: 0.75rem;
+    padding: 8px 20px;
+    letter-spacing: 2px;
   }
 
   .teams-feature__heading {
-    font-size: 2.6rem;
+    font-size: 2rem;
+    letter-spacing: 3px;
   }
 
-  .teams-feature {
-    padding: 2rem 1rem 3rem;
+  .teams-feature__description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .teams-feature__games {
+    font-size: 0.85rem;
+    letter-spacing: 1.8px;
   }
 }
 
 @media (max-width: 640px) {
+  .teams-feature {
+    padding: 2rem 0.75rem 2.5rem;
+    margin: 2rem 0 0;
+  }
+
+  .teams-hero {
+    margin-bottom: 1.75rem;
+  }
+
+  .teams-hero__title {
+    font-size: 1.15rem;
+    letter-spacing: 2.5px;
+  }
+
   .teams-feature__card {
     min-height: 420px;
     background-image: url('../img/MobileTeams.png');
     background-size: cover;
     background-position: center top;
     align-items: flex-start;
+    border-radius: 12px;
+  }
+
+  .teams-feature__card::after {
+    border-radius: 12px;
   }
 
   .teams-feature__content {
-    padding: 36px 20px 48px;
-    gap: 16px;
+    padding: 60px 20px 48px;
+    gap: 14px;
     justify-content: flex-start;
-    padding-top: 60px;
     max-width: 100%;
   }
 
   .teams-feature__badge {
     padding: 8px 18px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 1.8px;
     align-self: flex-start;
   }
 
   .teams-feature__heading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
     text-align: left;
     word-break: break-word;
     hyphens: auto;
+    line-height: 1.15;
   }
 
   .teams-feature__description {
     font-size: 0.95rem;
     text-align: left;
     text-wrap: pretty;
+    line-height: 1.6;
   }
 
   .teams-feature__games {
@@ -746,24 +832,115 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
     letter-spacing: 1.4px;
     gap: 10px;
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
 
 /* Extra small screens: tighten heading further */
 @media (max-width: 480px) {
-  .teams-feature__heading {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    line-height: 1.05;
+  .teams-feature {
+    padding: 1.75rem 0.5rem 2.25rem;
   }
-  .teams-feature__badge {
-    font-size: 0.7rem;
-    padding: 6px 14px;
+
+  .teams-hero {
+    margin-bottom: 1.5rem;
   }
+
+  .teams-hero__title {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .teams-feature__card {
+    min-height: 400px;
+  }
+
   .teams-feature__content {
-    padding-top: 52px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 52px 16px 40px;
+    gap: 12px;
+  }
+
+  .teams-feature__badge {
+    font-size: 0.68rem;
+    padding: 6px 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .teams-feature__heading {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .teams-feature__description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .teams-feature__games {
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    gap: 8px;
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  .teams-feature {
+    padding: 1.5rem 0.5rem 2rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .teams-hero {
+    margin-bottom: 1.25rem;
+  }
+
+  .teams-hero__title {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  .teams-feature__card {
+    min-height: 380px;
+    border-radius: 10px;
+  }
+
+  .teams-feature__card::after {
+    border-radius: 10px;
+  }
+
+  .teams-feature__content {
+    padding: 48px 12px 36px;
+    gap: 10px;
+  }
+
+  .teams-feature__badge {
+    font-size: 0.12rem;
+    padding: 5px 12px;
+    letter-spacing: 1.3px;
+  }
+
+  .teams-feature__heading {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  .teams-feature__description {
+    font-size: 0.83rem;
+    line-height: 1.5;
+  }
+
+  .teams-feature__games {
+    font-size: 0.72rem;
+    letter-spacing: 0.8px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .teams-feature__divider {
+    margin: 0 2px;
   }
 }
 
@@ -883,7 +1060,7 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
 .teams-feature__badge {
   display: inline-block;
   align-self: flex-start;
-  background: linear-gradient(135deg, #fc0369 0%, #ff1f7a 100%);
+  background: #fc0369;
   color: #ffffff;
   font-family: "Exo 2", sans-serif;
   font-size: 0.85rem;
@@ -893,11 +1070,12 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
   padding: 10px 24px;
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(252, 3, 105, 0.4);
+  white-space: nowrap;
 }
 
 .teams-feature__heading {
   font-family: "Exo 2", sans-serif;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
@@ -1175,7 +1353,7 @@ h4, .h4 { font-family: var(--font-display); font-size: var(--fs-400); line-heigh
 }
 
 .follow-us__title-main {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 900;
   letter-spacing: 0.08em;
   background: linear-gradient(135deg, #ffffff 0%, #fc0369 50%, #ff488f 100%);
