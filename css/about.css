@@ -162,7 +162,13 @@
   }
   .about-logo { flex: 0 0 auto; }
   .about-logo img { width: 120px; animation-delay: 120ms; }
-  .about-text p { max-width: 100%; font-size: 1rem; animation-delay: 260ms; padding-left: 0; }
+  .about-text p { max-width: 100%; font-size: 1rem; animation-delay: 260ms; padding-left: 0; text-align: center; }
+
+  /* Hide the decorative left accent on narrow screens so text doesn't get pushed
+     or overlap — keep layout simple and centered for mobile. */
+  .about-text p::before {
+    display: none;
+  }
 }
 
 /* Simple fade + slide up animation used for both logo and text */
@@ -198,24 +204,34 @@
    starts below the header instead of at the top of the container */
 .timeline-grid {
   position: relative;
+  /* width of the left timeline column; used to compute centering for the
+     vertical line and dot positions so they stay perfectly aligned. */
+  --timeline-left-col: 96px;
+  /* width of the vertical rail — used to compute a true centered offset */
+  --timeline-line-width: 2px;
+  /* default dot size (used to compute precise centering) */
+  --timeline-dot-size: 16px;
 }
 
 /* the vertical line that connects timeline dots
    it's a real DOM element so JS can toggle `.drawn` on it */
 .timeline-line {
   position: absolute;
-  /* center the line in the left column (half of 96px = 48px) */
-  left: 48px;
+  /* center the line in the left column using the CSS variable so
+     it stays aligned when the column width changes at breakpoints */
+  /* subtract half the line width so the line is visually centered */
+  left: calc(var(--timeline-left-col) / 2 - (var(--timeline-line-width) / 2));
   top: 0;
   bottom: 0;
-  width: 2px; /* slim core line */
+  width: var(--timeline-line-width); /* slim core line */
   background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
   border-radius: 2px;
   transform-origin: top;
   transform: scaleY(0);
   opacity: 0;
   z-index: 0; /* sit behind dots */
-  box-shadow: 0 0 0 2px rgba(3,8,20,0.18); /* subtle darker rail behind the core to avoid looking like a thin glitch */
+  /* remove heavy outline that can visually shift the rail on small screens */
+  box-shadow: none;
 }
 .timeline-line.drawn {
   animation: drawLine 900ms cubic-bezier(.22,.9,.35,1) forwards;
@@ -229,8 +245,9 @@
 /* each item uses a two-column grid: dot | content */
 .timeline-item {
   display: grid;
-  /* larger left column for dots + breathing room */
-  grid-template-columns: 96px 1fr;
+  /* left column width is controlled via --timeline-left-col so we can
+     center the line and dots reliably across breakpoints */
+  grid-template-columns: var(--timeline-left-col) 1fr;
   gap: 1.25rem;
   align-items: start;
   margin-bottom: 2.8rem;
@@ -248,9 +265,14 @@
 
 .timeline-dot {
   grid-column: 1 / 2;
+  /* center the dot inside the left column using grid alignment so it
+     always lines up with the vertical rail (which is also centered by
+     column math). Avoid mixing `left` offsets + transforms which can
+     conflict at narrow breakpoints. */
   justify-self: center;
-  width: 16px;
-  height: 16px;
+  align-self: start;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
   background: linear-gradient(180deg, var(--accent-pink), var(--accent-blue));
   border-radius: 50%;
   box-shadow: 0 8px 22px rgba(43,120,255,0.09);
@@ -279,13 +301,27 @@
 
 @media (max-width: 880px) {
   .timeline-item {
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: var(--timeline-left-col) 1fr;
     gap: 0.75rem;
   }
-  .timeline-line { display: none; }
-  .timeline-dot { justify-self: start; margin-left: 4px; width: 12px; height: 12px; }
+  /* Use a smaller left column on tablet/mobile; the line and dots will
+     remain centered because they compute from --timeline-left-col. */
+  .timeline-grid { --timeline-left-col: 36px; --timeline-dot-size: 12px; }
+  .timeline-line { display: block; top: 20px; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)); border-radius: 2px; transform-origin: top; transform: scaleY(1); opacity: 0.7; box-shadow: none; z-index: 0; }
   .timeline-card { margin-left: 0; padding: 1rem 1.1rem; }
   .timeline-thumb { display: none !important; }
+}
+
+/* Further refine the timeline line for very small screens so it doesn't
+   overlap the header or feel too tall. This makes the connector lighter
+   and nudges it inward on narrow devices. */
+@media (max-width: 480px) {
+  /* Use an even smaller left column on very small screens so the line and
+     dot centers remain aligned. */
+  .timeline-grid { --timeline-left-col: 28px; --timeline-dot-size: 10px; }
+  .timeline-line { display: block; top: 12px; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); opacity: 0.65; border-radius: 2px; box-shadow: none; z-index: 0; transform: scaleY(1); }
+  .timeline-dot { justify-self: center; }
+  .timeline-card { padding: 0.9rem 1rem; }
 }
 
 /* Line draw keyframes */
