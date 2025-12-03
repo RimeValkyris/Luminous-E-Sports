@@ -158,13 +158,14 @@ main {
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: auto;
-    z-index: 20;
+    /* Ensure nav links sit above logo/social hitboxes to avoid partial clickability */
+    z-index: 1001;
   }
   /* place the logo on the left side of the header on desktop */
   .navbar-logo {
     position: static;
     justify-content: flex-start;
-    z-index: 30;
+    z-index: 1000;
     display: flex;
     align-items: center;
   }
