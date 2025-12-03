@@ -6,16 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luminous E-Sports</title>
   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="">
+  <meta name="description" content="Luminous E-Sports — official site for teams, news, schedules, standings, and community. Follow our competitive journey across Valorant, CODM, and more.">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <meta property="og:title" content="Luminous E-Sports — Official Site">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="img/luminouslogo.png">
+  <meta property="og:image:alt" content="Luminous E-Sports hero banner">
+  <meta property="og:description" content="News, matches, standings, featured team, and community from Luminous E-Sports.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Luminous E-Sports — Official Site">
+  <meta name="twitter:description" content="Follow Luminous E-Sports for news, matches, standings, and community.">
+  <meta name="twitter:image" content="img/luminouslogo.png">
 
   <!-- Favicons (use repo-relative paths so GitHub Pages serves them correctly) -->
   <!-- Fallback absolute path for GitHub Pages project site -->
@@ -30,6 +37,37 @@
 </head>
 
 <body>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Luminous E-Sports",
+    "url": "https://example.com/",
+    "logo": "https://example.com/img/luminouslogo.png",
+    "sameAs": [
+      "https://facebook.com/",
+      "https://twitch.tv/",
+      "https://discord.gg/",
+      "https://youtube.com/",
+      "https://twitter.com/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Valorant Semi-Finals",
+    "startDate": "2025-10-04T17:00:00+08:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Luminous E-Sports",
+      "url": "https://example.com/"
+    }
+  }
+  </script>
   <header>
     <nav class="navbar">
       <div class="navbar-logo">
@@ -42,6 +80,7 @@
       </div>
       <div class="nav-menu">
         <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
           <li><a href="pages/about.html">ABOUT</a></li>
           <li><a href="pages/teams.html">TEAMS</a></li>
           <li><a href="pages/news.html">NEWS</a></li>
@@ -62,9 +101,403 @@
 
 <!--START MAIN BODY HERE!!!-->
   <main>
-    
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active">
+          <img src="img/Carousel-1.png" alt="Focused and Ready for Battle">
+          <div class="carousel-content">
+            <h2>Focused and Ready for Battle</h2>
+            <p>Preparation meets precision</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-2.jpg" alt="Teamwork in Action">
+          <div class="carousel-content">
+            <h2>Teamwork in Action</h2>
+            <p>Stronger together</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-3.jpg" alt="Intense In-Game Moments">
+          <div class="carousel-content">
+            <h2>Intense In-Game Moments</h2>
+            <p>Every click counts</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="img/Carousel-4.jpg" alt="On the Big Stage">
+          <div class="carousel-content">
+            <h2>On the Big Stage</h2>
+            <p>Where champions are made</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="carousel-btn next" onclick="changeSlide(1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <!-- Dot Indicators -->
+      <div class="carousel-dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </section>
 
     
+      <!-- Latest News cards -->
+      <section class="news-highlight" aria-labelledby="news-highlight-heading">
+        <div class="news-highlight__intro">
+          <p class="news-highlight__eyebrow">Trending Reports</p>
+          <h2 id="news-highlight-heading">Fresh intel from the Luminous Newsroom</h2>
+          <p class="news-highlight__summary">Stay on top of the storylines shaping the esports arena. Hand-picked briefs from our analysts, refreshed weekly.</p>
+        </div>
+
+        <div class="news-card-grid">
+          <article class="news-card">
+            <div class="news-card__image">
+              <img src="img/testval2.jpg" alt="Macro photo of a gaming keyboard backlit in red" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <h3>10 Sites For Latest E-Sports News &amp; Pro Tips</h3>
+              <p>Our media squad ranks the essential destinations every competitor should refresh between scrims.</p>
+              <a class="news-card__cta" href="pages/news.html">Read more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__image">
+              <img src="img/jing.jpg" alt="Official statement graphic with bright yellow crest" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <h3>Voting on E-Palarong Pambansa Hijacked</h3>
+              <p>Officials shutter the public poll after a wave of automated ballots skewed the standings overnight.</p>
+              <a class="news-card__cta" href="pages/news.html">Read more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__image">
+              <img src="img/Carousel-4.jpg" alt="Stage photo from Olympic Esports Week" loading="lazy">
+            </div>
+            <div class="news-card__body">
+              <h3>Luminous Secures Semi-Final Slot</h3>
+              <p>Another sweep locks our roster into the bracket’s penultimate round with undeniable momentum.</p>
+              <a class="news-card__cta" href="pages/news.html">Read more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    <!-- Match Schedule & Tournament Standing -->
+    <section class="tournament-section">
+      <div class="tournament-container">
+        <!-- Match Schedule -->
+        <div class="match-schedule">
+          <h2>MATCH SCHEDULE</h2>
+          
+          <div class="match-item">
+            <div class="match-info">
+              <div class="game-type">Valorant Semi-Finals</div>
+              <div class="match-time">05:00 PM</div>
+              <div class="match-date">Saturday, October 4, 2025</div>
+            </div>
+            <div class="match-teams">
+              <div class="team-logo">
+                <img src="img/luminouslogo.png" alt="Luminous" class="team-icon">
+              </div>
+              <div class="vs">VS</div>
+              <div class="team-logo">
+                <img src="img/Night Knight.png" alt="Knight Night" class="team-icon">
+              </div>
+            </div>
+          </div>
+
+          <div class="match-item">
+            <div class="match-info">
+              <div class="game-type">Call of Duty Semi-Finals</div>
+              <div class="match-time">05:00 PM</div>
+              <div class="match-date">Sunday, October 5, 2025</div>
+            </div>
+            <div class="match-teams">
+              <div class="team-logo">
+                <img src="img/luminouslogo.png" alt="Luminous" class="team-icon">
+              </div>
+              <div class="vs">VS</div>
+              <div class="team-logo">
+                <img src="img/Sashi ESports.png" alt="Sashi E-Sports" class="team-icon">
+              </div>
+            </div>
+          </div>
+
+          <div class="match-item">
+            <div class="match-info">
+              <div class="game-type">Mobile Legends Semi-Finals</div>
+              <div class="match-time">05:00 PM</div>
+              <div class="match-date">Saturday, October 4, 2025</div>
+            </div>
+            <div class="match-teams">
+              <div class="team-logo">
+                <img src="img/luminouslogo.png" alt="Luminous" class="team-icon">
+              </div>
+              <div class="vs">VS</div>
+              <div class="team-logo">
+                   <img src="img/Faze.png" alt="Faze" class="team-icon">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tournament Standing -->
+        <div class="tournament-standing">
+          <div class="standing-header">
+            <span class="trophy trophy--accent"><img src="img/TropIco.png" alt="Trophy" class="trophy-icon"></span>
+            <h2>Tournament Standing</h2>
+          </div>
+          
+          <div class="standing-list">
+            <div class="standing-item first">
+              <div style="display:inline-flex;align-items:center;gap:0.75rem;">
+                <span class="trophy trophy--yellow"><img src="img/1stTrophy.png" alt="Trophy" class="trophy-icon"></span>
+                <span class="team-name">Luminous E-Sports</span>
+              </div>
+              <span class="standing-points">18 pts</span>
+            </div>
+            <div class="standing-item">
+              <div style="display:inline-flex;align-items:center;gap:0.75rem;">
+                <span class="trophy trophy--silver"><img src="img/2ndTrophy.png" alt="Trophy" class="trophy-icon"></span>
+                <span class="team-name">Knight Night</span>
+              </div>
+              <span class="standing-points">15 pts</span>
+            </div>
+            <div class="standing-item">
+              <div style="display:inline-flex;align-items:center;gap:0.75rem;">
+                <span class="trophy trophy--bronze"><img src="img/3rdTrophy.png" alt="Trophy" class="trophy-icon"></span>
+                <span class="team-name">Sashi E-Sports</span>
+              </div>
+              <span class="standing-points">12 pts</span>
+            </div>
+            <div class="standing-item">
+              <div style="display:inline-flex;align-items:center;gap:0.75rem;">
+                <span class="trophy trophy--muted"><img src="img/4thTrophy.png" alt="Trophy" class="trophy-icon"></span>
+                <span class="team-name">AN-94</span>
+              </div>
+              <span class="standing-points">9 pts</span>
+            </div>
+          </div>
+
+          <div class="tournament-stats">
+            <div class="stat-group">
+              <div class="stat-number">24</div>
+              <div class="stat-label">Total Teams</div>
+            </div>
+            <div class="stat-group">
+              <div class="stat-number">67</div>
+              <div class="stat-label">Matches Played</div>
+            </div>
+            <div class="stat-row">
+              <div class="prize-pool">
+                <div class="prize-amount">$50K</div>
+                <div class="prize-label">Prize Pool</div>
+              </div>
+              <div class="status">
+                <div class="status-indicator">LIVE</div>
+                <div class="status-label">Status</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Featured Team Banner -->
+    <section class="teams-feature" aria-labelledby="teams-feature-heading">
+      <div class="teams-hero">
+        <h2 class="teams-hero__title">Featured Team</h2>
+      </div>
+
+      <div class="teams-feature-inner">
+        <a href="pages/teams.html" class="teams-feature__link" aria-label="Go to Teams page">
+          <div class="teams-feature__card" role="region" aria-label="Team Luminous feature">
+            <div class="teams-feature__overlay"></div>
+            <div class="teams-feature__content">
+              <span class="teams-feature__badge">Featured Team</span>
+              <h3 class="teams-feature__heading">Team Luminous</h3>
+              <p class="teams-feature__description">Our elite CODM squad dominating the competitive scene with strategic gameplay and exceptional teamwork.</p>
+              <div class="teams-feature__games">Call Of Duty <span class="teams-feature__divider">|</span> Mobile</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+      <div class="testimonials__container">
+        <div class="testimonials__header">
+          <span class="testimonials__eyebrow">COMMUNITY VOICES</span>
+          <h2 id="testimonials-heading" class="testimonials__title">What Fans Are Saying</h2>
+          <p class="testimonials__subtitle">Hear from our incredible community of supporters and players</p>
+        </div>
+        
+        <div class="testimonials__grid">
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-card__text">"Luminous is not just a team, it's a family. Their dedication and passion inspire me every day. Can't wait to see them dominate at the next championship!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://www.computerhope.com/people/pictures/john_shedletsky.jpg" alt="John Doe">
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">John Shedletsky</h4>
+                <p class="testimonial-card__role">Fan Since 2021</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-card__text">"Best esports organization hands down! The way they engage with the community and their incredible gameplay makes them stand out from the rest."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://cdn.donmai.us/sample/e2/3e/__semmelweis_reverse_1999_drawn_by_ttehomase__sample-e23e714e8ea9b2936e0b6d9ecaa74111.jpg" alt="Sarah Miller">
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">Semmelweis Miller</h4>
+                <p class="testimonial-card__role">Discord Community Mod</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-card__text">"Watching Luminous play is pure entertainment. Their teamwork and strategies are next level. Proud to be part of this amazing community!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://cdn.donmai.us/sample/fc/5b/__vertin_reverse_1999_drawn_by_wilson_wilson1151487__sample-fc5b79d5587d799956f57807bae3d463.jpg" alt="Mike Chen">
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">Reveret Chen</h4>
+                <p class="testimonial-card__role">Twitch Subscriber</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-card__text">"Luminous has redefined what it means to be a professional esports team. Their commitment to excellence and community is unmatched!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://cdn.donmai.us/sample/64/8d/__marcus_reverse_1999_drawn_by_ruppitus__sample-648dc75259219f83f78e7e70eb76ab70.jpg" alt="Emma Johnson">
+              </div>
+              <div class="testimonial-card__info">
+                <h4 class="testimonial-card__name">Marcus Johnson</h4>
+                <p class="testimonial-card__role">YouTube Subscriber</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Follow Us Section -->
+    <section class="follow-us" aria-labelledby="follow-us-heading">
+      <div class="follow-us__container">
+        <div class="follow-us__content">
+          <h2 id="follow-us-heading" class="follow-us__title">
+            <span class="follow-us__title-accent">JOIN THE</span>
+            <span class="follow-us__title-main">LUMINOUS ARMY</span>
+          </h2>
+          <p class="follow-us__description">Connect with us across all platforms. Get the latest updates, exclusive content, and be part of our gaming community.</p>
+        </div>
+        
+        <div class="follow-us__socials">
+          <a href="#" class="social-card social-card--facebook" aria-label="Follow us on Facebook">
+            <div class="social-card__icon">
+              <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#1877F2"/>
+                <path d="M29.6 25.2l.8-5.2h-5V16c0-1.4.7-2.8 2.9-2.8H31V8.6s-2-.4-3.9-.4c-4 0-6.6 2.4-6.6 6.8V20h-4.4v5.2h4.4V38h5.4V25.2h4.7z" fill="white"/>
+              </svg>
+            </div>
+            <div class="social-card__content">
+              <h3 class="social-card__label">Facebook</h3>
+              <p class="social-card__description">Follow Us on Facebook!<br>Luminous E-Sports</p>
+            </div>
+          </a>
+
+          <a href="#" class="social-card social-card--youtube" aria-label="Follow us on YouTube">
+            <div class="social-card__icon">
+              <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#FF0000"/>
+                <path d="M20 16v16l12-8-12-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="social-card__content">
+              <h3 class="social-card__label">Youtube</h3>
+              <p class="social-card__description">Subscribe to our Channel<br>Luminous E-Sports</p>
+            </div>
+          </a>
+
+          <a href="#" class="social-card social-card--twitch" aria-label="Follow us on Twitch">
+            <div class="social-card__icon">
+              <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#9146FF"/>
+                <path d="M16 12l-3 6v18h6v3h3l3-3h4.5l7.5-7.5V12H16zm2 2h16v12l-4.5 4.5H24l-3 3v-3h-3V14zm6 4v7h2v-7h-2zm6 0v7h2v-7h-2z" fill="white"/>
+              </svg>
+            </div>
+            <div class="social-card__content">
+              <h3 class="social-card__label">Twitch</h3>
+              <p class="social-card__description">Follow Us on Twitch<br>Luminous E-Sports</p>
+            </div>
+          </a>
+
+          <a href="#" class="social-card social-card--discord" aria-label="Join us on Discord">
+            <div class="social-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#5865F2"/>
+                <path d="M54.2 23.8c-2.5-1.2-5.2-2-8-2.5-.3.7-.8 1.5-1 2.2-3-.5-6-.5-9 0-.3-.7-.7-1.5-1.2-2.2-2.8.5-5.5 1.3-8 2.5-5.7 8.5-7.2 16.8-6.3 25 3.3 2.5 6.7 4 9.8 5 .8-1 1.5-2.2 2.2-3.3-1.2-.5-2.3-1-3.3-1.7.3-.2.5-.5.8-.7 6.3 3 13.3 3 19.7 0 .3.3.5.5.8.7-1.2.7-2.2 1.2-3.3 1.7.7 1.2 1.3 2.3 2.2 3.3 3.2-1 6.5-2.5 9.8-5 1-9.3-1.5-17.5-6.3-25.2zm-22.2 20c-2.2 0-3.8-2-3.8-4.3s1.7-4.3 3.8-4.3c2.2 0 4 2 3.8 4.3 0 2.3-1.7 4.3-3.8 4.3zm14.2 0c-2.2 0-3.8-2-3.8-4.3s1.7-4.3 3.8-4.3c2.2 0 4 2 3.8 4.3 0 2.3-1.7 4.3-3.8 4.3z" fill="white"/>
+              </svg>
+            </div>
+            <div class="social-card__content">
+              <h3 class="social-card__label">Discord</h3>
+              <p class="social-card__description">Join Our Discord Server<br>Luminous E-Sports Fan Server</p>
+            </div>
+          </a>
+
+          <a href="#" class="social-card social-card--twitter" aria-label="Follow us on X (Twitter)">
+            <div class="social-card__icon">
+              <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#000000"/>
+                <path d="M28.5 15h3.7l-8.1 9.3L35 33h-7.4l-5.8-7.6L15.3 33h-3.7l8.7-9.9L10 15h7.6l5.3 7L28.5 15zm-1.3 16.2h2.1L17.8 17h-2.2l11.6 14.2z" fill="white"/>
+              </svg>
+            </div>
+            <div class="social-card__content">
+              <h3 class="social-card__label">X</h3>
+              <p class="social-card__description">Follow us on X<br>Luminous E-Sports</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 <!--END MAIN BODY HERE!!!-->
 

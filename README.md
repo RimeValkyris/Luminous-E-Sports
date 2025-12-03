@@ -52,6 +52,9 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - applied the Navigation Menu and The Footer to all Webpages
 - Removed Test Variable Image in About Page
 
+### 12/2/2025
+- Merged initial styles for Merchandise Page
+- Added Margin in Merchandise Page
 
 ## Notes and Post Scripts
 
