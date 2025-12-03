@@ -699,32 +699,41 @@
 @media (max-width: 640px) {
   .teams-feature__card {
     min-height: 420px;
+    background-image: url('../img/MobileTeams.png');
+    background-size: cover;
+    align-items: flex-start;
   }
 
   .teams-feature__content {
     padding: 36px 28px 48px;
     gap: 16px;
-  }
-
-  .teams-feature__games {
-    font-size: 0.85rem;
-    letter-spacing: 1.4px;
-    gap: 10px;
+    justify-content: flex-start;
+    padding-top: 60px;
   }
 
   .teams-feature__badge {
     padding: 8px 18px;
     font-size: 0.75rem;
     letter-spacing: 1.8px;
+    align-self: flex-start;
   }
 
   .teams-feature__heading {
     font-size: 2.3rem;
     letter-spacing: 3.5px;
+    text-align: left;
   }
 
   .teams-feature__description {
     font-size: 0.98rem;
+    text-align: left;
+  }
+
+  .teams-feature__games {
+    font-size: 0.85rem;
+    letter-spacing: 1.4px;
+    gap: 10px;
+    justify-content: flex-start;
   }
 }
 
