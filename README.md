@@ -56,6 +56,11 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - Merged initial styles for Merchandise Page
 - Added Margin in Merchandise Page
 
+### 12/3/2025
+- Home Page is somewhat semi completed
+- About page is started
+- Merchandise Page is being worked on
+
 ## Notes and Post Scripts
 
 <sub><i>~~Managed to fucked up the mobile menu, so here's a snake with 1 functional brain cell.~~</i></sub>
