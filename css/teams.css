@@ -1,0 +1,346 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "League Spartan", "Exo 2", sans-serif;
+        color: #fff;
+      }
+
+      body {
+        background: #070b16;
+      }
+
+      /* BANNER */
+      .banner {
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, #ff005e, #7f00ff);
+      }
+
+      .banner h1 {
+        font-size: 3rem;
+        letter-spacing: 4px;
+      }
+
+      /* FEATURED TEAM */
+      .featured {
+        margin: 40px;
+      }
+
+      .featured-card {
+        position: relative;
+        width: fit-content;
+      }
+
+      .featured-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .featured-info {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        width: calc(100% - 40px);
+        padding: 0;
+        color: white;
+        box-sizing: border-box;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        width: 400px;
+      }
+
+      .featured-info h2 {
+        margin-bottom: 20px;
+      }
+
+      .featured-info p {
+        margin-top: 20px;
+      }
+
+      .featured-info h3,
+      .featured-info p {
+        margin: 0;
+      }
+
+      /* ROSTER */
+      .roster {
+        padding: 60px 10%;
+      }
+
+      #roster-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        background: #111527;
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 10px;
+        border: 1px solid #ff005e;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .roster-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 25px;
+      }
+
+      .player-card {
+        background: #141a2e;
+        padding: 15px;
+        text-align: center;
+        border-radius: 12px;
+        transition: 0.3s;
+      }
+
+      .player-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .roster-name {
+        color: #0585e6;
+        font-size: 15px;
+        margin-bottom: 9px;
+      }
+
+      .roster-desc {
+        color: #ff005e;
+        font-size: 11px;
+      }
+
+      /* COACHES SECTION */
+      .coaches {
+        padding: 60px 10%;
+      }
+
+      .coach-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 25px;
+      }
+
+      .coach-card {
+        background: #1a2037;
+        padding: 15px;
+        text-align: center;
+        border-radius: 12px;
+        transition: 0.3s;
+        border: 1px solid #7f00ff55;
+      }
+
+      #coach-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        background: #111527;
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 10px;
+        border: 1px solid #0585e6;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .coach-card:hover {
+        transform: translateY(-6px);
+        background: #202b4b;
+        border-color: #b300ff;
+      }
+
+      .coach-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      /* ACHIEVEMENTS */
+      .achievements {
+        padding: 60px 10%;
+      }
+
+      /* Section title */
+      .ach-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        background: #111527;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 10px;
+        border: 1px solid #7f00ff;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Achievement row style */
+      .ach-item {
+        display: grid;
+        grid-template-columns: 60px 1fr 2fr;
+        align-items: center;
+        background: #111624;
+        margin-bottom: 15px;
+        padding: 14px 20px;
+        border-radius: 10px;
+        border: 1px solid #b300ff55;
+        transition: 0.3s;
+      }
+
+      /* Hover glow effect */
+      .ach-item:hover {
+        border-color: #d900ff;
+        transform: translateY(-3px);
+      }
+
+      /* Left icon */
+      .ach-icon {
+        font-size: 1.8rem;
+        color: #ffd200;
+        text-align: center;
+      }
+
+      .ach-date {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        text-align: center;
+      }
+
+      .ach-award {
+        font-size: 1rem;
+        color: #ffd200;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        text-align: right;
+      }
+
+      .ach-award img {
+        width: 40px;
+        height: auto;
+        display: block;
+      }
+
+      @media (max-width: 992px) {
+        /* FEATURED CARD */
+        .featured-card {
+          width: 100%;
+        }
+
+        .featured-info {
+          position: absolute;
+          top: 40%;
+          left: 10px;
+          transform: translateY(-50%);
+          width: calc(100% - 20px);
+          font-size: 0.9rem;
+        }
+
+        .featured-info h2 {
+          font-size: 1.5rem;
+        }
+
+        .featured-info h3 {
+          font-size: 1.2rem;
+        }
+
+        /* ROSTER GRID */
+        .roster-grid {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          gap: 20px;
+        }
+
+        /* COACH GRID */
+        .coach-grid {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          gap: 20px;
+        }
+
+        /* ACHIEVEMENTS */
+        .ach-item {
+          grid-template-columns: 50px 1fr 1.5fr;
+          padding: 12px 16px;
+        }
+
+        .ach-award img {
+          width: 30px;
+        }
+      }
+
+      
+      @media (max-width: 600px) {
+         .featured {
+            margin-top: 20px;
+    margin:20px 0 0 0; 
+    padding: 0;
+  }
+        .featured-card {
+          width: 100%; 
+          height: 300px;
+          overflow: hidden;
+        }
+
+        .featured-card img {
+    width: 100%;
+    height: 100%;     
+    object-fit: cover; 
+  }
+
+        .featured-info {
+          top: 35%;
+          left: 10px; 
+          transform: translateY(-50%);
+          width: calc(100% - 10px); 
+          font-size: 0.85rem;
+        }
+
+        .featured-info h2 {
+          font-size: 1.2rem;
+        }
+
+        .featured-info h3 {
+          font-size: 1rem;
+        }
+
+        
+        .roster-grid,
+        .coach-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        
+        .ach-item {
+          grid-template-columns: 40px 1fr;
+          grid-template-rows: auto auto;
+          padding: 10px 12px;
+        }
+
+        .ach-date {
+          grid-column: 2 / 3;
+          margin-top: 4px;
+          text-align: left;
+        }
+
+        .ach-award {
+          grid-column: 2 / 3;
+          justify-content: flex-start;
+          margin-top: 4px;
+        }
+
+        .ach-award img {
+          width: 25px;
+        }
+      }
