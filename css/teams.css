@@ -12,7 +12,7 @@
 	min-height: 420px;
 	display: flex;
 	align-items: center;
-	color: #fff;
+	color: #ffffff;
 	overflow: hidden;
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
@@ -28,7 +28,7 @@
 	font-size: 20px;
 	letter-spacing: 2px;
 	margin: 0 0 8px 0;
-	color: #fff;
+	color: #1653EF;
 	text-transform: uppercase;
 	opacity: 0.95;
 }
@@ -37,7 +37,8 @@
 	font-family: 'Exo 2', sans-serif;
 	font-size: 44px;
 	margin: 0 0 12px 0;
-	color: #fff;
+	color: #FC0369;
+;
 	text-transform: uppercase;
 	line-height: 1;
 }
@@ -53,11 +54,17 @@
 
 /* Player cards styles */
 .players-section {
-	max-width: 1400px;
-	margin: 36px auto;
-	padding: 24px;
+	/* full-bleed background: spans edge-to-edge of the viewport */
+	width: 100%;
+	padding: 36px 0; /* vertical spacing; horizontal padding handled by inner container */
+	background: linear-gradient(180deg, rgba(11,19,41,0.6), rgba(8,15,35,0.6));
+	border-radius: 0;
+	box-shadow: none;
 }
 .players-inner {
+	/* center content and constrain width inside the full-bleed background */
+	max-width: 1400px;
+	margin: 0 auto;
 	padding: 16px 20px;
 }
 
@@ -178,10 +185,32 @@
 }
 
 /* Mobile phones */
-@media (max-width: 560px) {
-	/* taller photos on phones */
-	.player-photo { height: 380px; }
+
+/* Outline on hover and keyboard-focus for better affordance */
+@media (hover: hover) and (pointer: fine) {
+	/* Remove colored rings: use a subtle neutral focus ring for accessibility */
+	.player-card:focus-within,
+	.coach-card:focus-within,
+	.achievement-item:focus-within {
+		box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+		outline: none;
+	}
+
+	/* Keep achievement border reinforcement on hover (no colored rings) */
+	.achievement-item:hover { border-color: var(--team-color, #FC0369); }
 }
+
+/* Respect reduced motion preference: disable translate/box-shadow transitions */
+@media (prefers-reduced-motion: reduce) {
+	.player-card,
+	.coach-card,
+	.achievement-item {
+		transition: none !important;
+		transform: none !important;
+		box-shadow: none !important;
+	}
+}
+
 
 /* Extra-large screens: increase photo size further */
 @media (min-width: 1600px) {
@@ -190,6 +219,8 @@
 
 /* Note: no mobile fallback — overlay appears only on hover */
 @media (max-width: 560px) {
+	/* Mobile phones: slightly shorter photos and single-column layout */
+	.player-photo { height: 380px; }
 	.players-grid { grid-template-columns: 1fr; }
 	.players-heading { font-size: 22px; }
 }
@@ -202,12 +233,19 @@
 
 /* Coaches section styles (two-card layout) */
 .coaches-section {
-	/* match players-section dimensions so both align visually */
-	max-width: 1400px;
-	margin: 36px auto;
-	padding: 24px;
+	/* full-bleed background to match players section */
+	width: 100%;
+	padding: 36px 0;
+	background: linear-gradient(180deg, rgba(11,19,41,0.6), rgba(8,15,35,0.6));
+	border-radius: 0;
+	box-shadow: none;
 }
-.coaches-inner { padding: 16px 20px; }
+.coaches-inner {
+	/* center content and constrain width inside the full-bleed background */
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 16px 20px;
+}
 .coaches-heading {
 	font-family: 'Exo 2', sans-serif;
 	font-size: 28px;
@@ -274,6 +312,77 @@
 }
 @media (min-width: 1600px) {
 	.coach-photo { height: 520px; }
+}
+
+
+/* Achievements / results list */
+.achievements-section {
+	width: 100%;
+	padding: 32px 0;
+	background: linear-gradient(180deg, rgba(11,19,41,0.6), rgba(8,15,35,0.6));
+}
+.achievements-inner { max-width: 1400px; margin: 0 auto; padding: 8px 20px; }
+.achievements-heading { font-family: 'Exo 2', sans-serif; font-size: 28px; margin: 0 0 6px 0; text-transform: uppercase; }
+.achievements-intro { color: rgba(255,255,255,0.95); margin: 0 0 18px 0; }
+.achievement-list { list-style: none; padding: 0; margin: 0; }
+.achievement-item {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	border: 2px solid var(--team-color);
+	padding: 14px 18px;
+	border-radius: 8px;
+	margin-bottom: 14px;
+	background: rgba(6,10,20,0.35);
+}
+.achievement-icon img { width: 44px; height: 44px; display: block; }
+.achievement-date { color: rgba(255,255,255,0.85); width: 180px; font-weight: 700; }
+.achievement-title { color: rgba(255,255,255,0.95); font-weight: 600; /* sit to the left of the trophy */ margin-left: auto; margin-right: 12px; flex: 0 1 auto; }
+.achievement-trophy img { width: 28px; height: 28px; display: block; }
+.achievement-trophy { display: flex; align-items: center; }
+
+@media (max-width: 900px) {
+	.achievement-date { width: 140px; }
+}
+@media (max-width: 560px) {
+	.achievement-item { flex-direction: column; align-items: flex-start; }
+	.achievement-date { width: auto; }
+	/* on narrow screens clear the right-aligned behavior so title flows normally */
+	.achievement-title { margin-left: 0; margin-right: 0; }
+}
+/* Hover lift for cards and achievement rows (applies only on hover-capable devices) */
+@media (hover: hover) and (pointer: fine) {
+	.player-card,
+	.coach-card,
+	.achievement-item {
+		transition: transform 200ms ease, box-shadow 200ms ease;
+		will-change: transform;
+		cursor: pointer;
+	}
+
+	.player-card:hover,
+	.coach-card:hover {
+		/* keep previous visual intent but slightly stronger on capable devices */
+		transform: translateY(-10px);
+		box-shadow: 0 18px 40px rgba(6,10,20,0.22),
+			/* subtle blue glow */
+			0 0 18px 4px rgba(22,83,239,0.12);
+	}
+
+	.achievement-item:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 28px rgba(6,10,20,0.18),
+			/* subtle blue glow (smaller) */
+			0 0 12px 3px rgba(22,83,239,0.10);
+	}
+
+	/* keyboard focus: blue glowing outline for accessibility */
+	.player-card:focus-within,
+	.coach-card:focus-within,
+	.achievement-item:focus-within {
+		box-shadow: 0 0 18px 4px rgba(22,83,239,0.14);
+		outline: none;
+	}
 }
 
 
