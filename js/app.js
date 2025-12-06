@@ -81,27 +81,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Respect reduced motion for any counting animations that may be present
-document.addEventListener('DOMContentLoaded', () => {
-  if (prefersReducedMotion) return;
-  const counters = document.querySelectorAll('.stat-number, .prize-amount');
-  counters.forEach(el => {
-    const text = el.textContent.trim();
-    const isMoney = /\$/.test(text);
-    const target = parseInt(text.replace(/[^\d]/g, ''), 10);
-    let current = 0;
-    const duration = 1200;
-    const step = Math.max(1, Math.round(target / (duration / 20)));
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = isMoney ? `$${current}${text.endsWith('K') ? 'K' : ''}` : `${current}`;
-    }, 20);
-  });
-});
+// (counter initialization removed here — handled below via IntersectionObserver)
 
 // Carousel functionality
 let currentSlideIndex = 0;
@@ -202,6 +182,45 @@ newsCards.forEach(card => {
   });
 });
 
+// Partners spotlight hover (follow-mouse lit effect)
+document.addEventListener('DOMContentLoaded', () => {
+  const partnerTiles = document.querySelectorAll('.partners-grid > div');
+  if (!partnerTiles || partnerTiles.length === 0) return;
+
+  partnerTiles.forEach(tile => {
+    // initialize CSS variables
+    tile.style.setProperty('--px', '50%');
+    tile.style.setProperty('--py', '50%');
+
+    const handleMove = (e) => {
+      const rect = tile.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      // Use pixel values so radial-gradient position follows precisely
+      tile.style.setProperty('--px', `${x}px`);
+      tile.style.setProperty('--py', `${y}px`);
+      tile.classList.add('is-hover');
+    };
+
+    const handleLeave = () => {
+      tile.classList.remove('is-hover');
+      tile.style.setProperty('--px', '50%');
+      tile.style.setProperty('--py', '50%');
+    };
+
+    tile.addEventListener('mousemove', handleMove);
+    tile.addEventListener('mouseleave', handleLeave);
+    tile.addEventListener('touchstart', (e) => {
+      // on touch, approximate center
+      const rect = tile.getBoundingClientRect();
+      tile.style.setProperty('--px', `${rect.width/2}px`);
+      tile.style.setProperty('--py', `${rect.height/2}px`);
+      tile.classList.add('is-hover');
+    }, { passive: true });
+    tile.addEventListener('touchend', handleLeave);
+  });
+});
+
 // Initialize counters when page loads
 window.addEventListener('DOMContentLoaded', () => {
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -212,8 +231,11 @@ window.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
         entry.target.classList.add('animated');
-        const target = parseInt(entry.target.textContent);
-        animateCounter(entry.target, target, 2000);
+        // Allow dataset to specify the numeric target and optional prefix/suffix
+        const target = parseInt(entry.target.dataset.target || entry.target.textContent, 10) || 0;
+        const prefix = entry.target.dataset.prefix || '';
+        const suffix = entry.target.dataset.suffix || '';
+        animateCounter(entry.target, target, 2000, prefix, suffix);
       }
     });
   }, { threshold: 0.5 });

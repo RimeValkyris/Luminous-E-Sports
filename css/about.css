@@ -60,7 +60,10 @@
 
 /* Reduce size on small screens to avoid overlapping content */
 @media (max-width: 480px) {
-  .banner-title { font-size: clamp(1.4rem, 9vw, 2.4rem); letter-spacing: 1px; }
+  .banner-title {
+    font-size: clamp(1.4rem, 9vw, 2.4rem);
+    letter-spacing: 1px;
+  }
 }
 
 /* Contrast overlay and entrance animation for banner title */
@@ -72,15 +75,22 @@
   z-index: 3; /* below title, above image */
   pointer-events: none;
 }
-.banner-title { z-index: 5; /* ensure on top of overlay */
+.banner-title {
+  z-index: 5; /* ensure on top of overlay */
   opacity: 0;
   transform: translate(-50%, -45%);
   animation: bannerIn 700ms cubic-bezier(.22,.9,.35,1) forwards;
 }
 
 @keyframes bannerIn {
-  from { opacity: 0; transform: translate(-50%, -40%) translateY(8px) scale(0.995); }
-  to   { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%) translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+  }
 }
 
 /* About hero section styles */
@@ -160,9 +170,20 @@
     text-align: center;
     gap: 1.5rem;
   }
-  .about-logo { flex: 0 0 auto; }
-  .about-logo img { width: 120px; animation-delay: 120ms; }
-  .about-text p { max-width: 100%; font-size: 1rem; animation-delay: 260ms; padding-left: 0; text-align: center; }
+  .about-logo {
+    flex: 0 0 auto;
+  }
+  .about-logo img {
+    width: 120px;
+    animation-delay: 120ms;
+  }
+  .about-text p {
+    max-width: 100%;
+    font-size: 1rem;
+    animation-delay: 260ms;
+    padding-left: 0;
+    text-align: center;
+  }
 
   /* Hide the decorative left accent on narrow screens so text doesn't get pushed
      or overlap — keep layout simple and centered for mobile. */
@@ -173,8 +194,14 @@
 
 /* Simple fade + slide up animation used for both logo and text */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px) scale(0.995); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* CTA button */
@@ -192,12 +219,18 @@
 }
 .timeline-header h2 {
   color: var(--text-light);
-  font-size: 1.6rem;
+  /* Larger, responsive heading to match other section headings */
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
   margin: 0 0 0.35rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.5px;
 }
 .timeline-header .timeline-lead {
   color: var(--muted);
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.05rem;
+  max-width: 80ch;
 }
 
 /* make the grid the positioning context for the vertical line so it
@@ -257,11 +290,21 @@
 .timeline-item.in-view {
   animation: fadeUp .6s cubic-bezier(.22,.9,.35,1) forwards;
 }
-.timeline-item.in-view:nth-child(1) { animation-delay: 0.04s; }
-.timeline-item.in-view:nth-child(2) { animation-delay: 0.12s; }
-.timeline-item.in-view:nth-child(3) { animation-delay: 0.2s; }
-.timeline-item.in-view:nth-child(4) { animation-delay: 0.28s; }
-.timeline-item.in-view:nth-child(5) { animation-delay: 0.36s; }
+.timeline-item.in-view:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.timeline-item.in-view:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.timeline-item.in-view:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.timeline-item.in-view:nth-child(4) {
+  animation-delay: 0.28s;
+}
+.timeline-item.in-view:nth-child(5) {
+  animation-delay: 0.36s;
+}
 
 .timeline-dot {
   grid-column: 1 / 2;
@@ -294,10 +337,19 @@
   color: var(--text-light);
   font-weight: 800;
 }
-.timeline-card p { margin: 0; color: var(--muted); line-height: 1.85; font-size: 1.02rem; }
+.timeline-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
 
-.timeline-thumb { display: none !important; }
-.timeline-card-content { display: block !important; }
+.timeline-thumb {
+  display: none !important;
+}
+.timeline-card-content {
+  display: block !important;
+}
 
 @media (max-width: 880px) {
   .timeline-item {
@@ -306,10 +358,30 @@
   }
   /* Use a smaller left column on tablet/mobile; the line and dots will
      remain centered because they compute from --timeline-left-col. */
-  .timeline-grid { --timeline-left-col: 36px; --timeline-dot-size: 12px; }
-  .timeline-line { display: block; top: 20px; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)); border-radius: 2px; transform-origin: top; transform: scaleY(1); opacity: 0.7; box-shadow: none; z-index: 0; }
-  .timeline-card { margin-left: 0; padding: 1rem 1.1rem; }
-  .timeline-thumb { display: none !important; }
+  .timeline-grid {
+    --timeline-left-col: 36px;
+    --timeline-dot-size: 12px;
+  }
+  .timeline-line {
+    display: block;
+    top: 20px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+    border-radius: 2px;
+    transform-origin: top;
+    transform: scaleY(1);
+    opacity: 0.7;
+    box-shadow: none;
+    z-index: 0;
+  }
+  .timeline-card {
+    margin-left: 0;
+    padding: 1rem 1.1rem;
+  }
+  .timeline-thumb {
+    display: none !important;
+  }
 }
 
 /* Further refine the timeline line for very small screens so it doesn't
@@ -318,16 +390,904 @@
 @media (max-width: 480px) {
   /* Use an even smaller left column on very small screens so the line and
      dot centers remain aligned. */
-  .timeline-grid { --timeline-left-col: 28px; --timeline-dot-size: 10px; }
-  .timeline-line { display: block; top: 12px; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); opacity: 0.65; border-radius: 2px; box-shadow: none; z-index: 0; transform: scaleY(1); }
-  .timeline-dot { justify-self: center; }
-  .timeline-card { padding: 0.9rem 1rem; }
+  .timeline-grid {
+    --timeline-left-col: 28px;
+    --timeline-dot-size: 10px;
+  }
+  .timeline-line {
+    display: block;
+    top: 12px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    opacity: 0.65;
+    border-radius: 2px;
+    box-shadow: none;
+    z-index: 0;
+    transform: scaleY(1);
+  }
+  .timeline-dot {
+    justify-self: center;
+  }
+  .timeline-card {
+    padding: 0.9rem 1rem;
+  }
 }
 
 /* Line draw keyframes */
 @keyframes drawLine {
-  from { transform: scaleY(0); opacity: 0.0; }
-  to   { transform: scaleY(1); opacity: 1; }
+  from {
+    transform: scaleY(0);
+    opacity: 0.0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
+
+/* Our Values section styles */
+.values-section {
+  padding: 3.5rem 1rem 5rem;
+  background: radial-gradient(800px 220px at 10% 10%, rgba(43,120,255,0.06), transparent 8%),
+              radial-gradient(700px 160px at 90% 80%, rgba(255,42,127,0.03), transparent 10%),
+              linear-gradient(180deg, rgba(6,12,24,0.6), rgba(6,12,24,0.86));
+  border-top: 1px solid rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  backdrop-filter: blur(4px);
+}
+.values-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.values-header h2 {
+  color: var(--text-light);
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 0 0 0.8rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.values-grid {
+  display: grid;
+  /* expose gap as a CSS variable so we can compute a single-column width */
+  --values-gap: 1.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--values-gap);
+  margin-top: 1.25rem;
+  align-items: start;
+}
+.value-card {
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(180deg, rgba(255,255,255,0.017), rgba(255,255,255,0.01));
+  border-radius: 14px;
+  padding: 1.25rem 1.3rem 1.6rem;
+  text-align: left;
+  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+  transition: transform .22s cubic-bezier(.22,.9,.35,1), box-shadow .22s ease, border-color .22s ease;
+}
+.value-card::before {
+  /* faint outer blur ring that matches the screenshot's soft stroke */
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: calc(14px + 8px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  filter: blur(6px);
+  opacity: 0.06;
+  pointer-events: none;
+}
+.value-card::after {
+  /* crisp inner hairline border */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+.value-thumb img {
+  width: 100%;
+  height: 200px; /* increased image height for stronger visual impact */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.value-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.06rem;
+  font-weight: 800;
+}
+.value-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 0.97rem;
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(2,6,23,0.55);
+  border-color: rgba(43,120,255,0.22);
+}
+
+/* Featured card sits centered below the top row */
+.value-card.featured {
+  /* make featured card the same width as a single grid column and center it
+     by allowing it to occupy the full row but constraining its width to the
+     computed single-column size. This keeps visual parity with other cards. */
+  grid-column: 1 / -1; /* occupy full row so we can center the card */
+  margin-top: 1.6rem;
+  text-align: center;
+  justify-self: center;
+  /* compute single column width: (container width - total gaps) / 4 */
+  width: calc((100% - (3 * var(--values-gap))) / 4);
+  max-width: 360px; /* prevent it from becoming too wide on very large screens */
+}
+
+/* Make featured card image even larger */
+.value-card.featured .value-thumb img {
+  /* match standard card image height for consistent layout */
+  height: 200px;
+}
+
+@media (max-width: 1100px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value-card.featured {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-header h2 {
+    font-size: 1.6rem;
+  }
+  .value-thumb img {
+    height: 220px;
+  }
+  .value-card {
+    padding: 1rem;
+  }
+}
+
+
+
+
+/* Partners section (moved from inline styles) */
+.partners-section {
+  /* dark navy background to visually separate partners area */
+  background: linear-gradient(180deg, rgba(8,18,34,0.92) 0%, rgba(6,12,24,0.86) 100%);
+  /* match horizontal padding with management section so text aligns */
+  padding: 3.5rem 1rem 4rem;
+  border-top: 1px solid rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  backdrop-filter: blur(4px);
+}
+.partners-inner {
+  /* Match management container width so headings/paragraphs align */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.partners-header h2 {
+  color: var(--text-light);
+  font-size: 2.4rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+}
+.partners-header p {
+  margin: 0;
+  color: var(--muted);
+  /* match management paragraph width for consistent alignment */
+  max-width: 80ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 0.6rem;
+}
+.partners-grid {
+  display: grid;
+  /* Allow columns to grow so logos can be larger on wide layouts */
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 2.25rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.partners-grid > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partners-grid > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partners-grid img {
+  /* increase max width so logos appear larger */
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Spotlight hover effect on partner tiles */
+.partners-grid > div {
+  position: relative;
+  overflow: visible;
+  border-radius: 8px;
+}
+.partners-grid > div::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(400px 200px at var(--px, 50%) var(--py, 50%), rgba(255,255,255,0.18), rgba(255,255,255,0.06) 30%, transparent 50%);
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 220ms ease, background-position 120ms linear;
+}
+.partners-grid > div.is-hover::after {
+  opacity: 1;
+}
+.partners-grid > div img {
+  transition: transform 260ms cubic-bezier(.22,.9,.35,1), filter 260ms ease, box-shadow 260ms ease;
+}
+.partners-grid > div.is-hover img {
+  transform: translateY(-6px) scale(1.03);
+  filter: drop-shadow(0 18px 30px rgba(2,6,23,0.45));
+}
+
+/* Extra-large screens: allow even bigger logos */
+@media (min-width: 1400px) {
+  .partners-grid {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+  .partners-grid img {
+    max-width: 260px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .partners-section {
+    padding: 2.5rem 1rem;
+  }
+}
+@media (max-width: 420px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .partners-header h2 {
+    font-size: 1.75rem;
+  }
+  .partners-header p {
+    font-size: 0.98rem;
+  }
+}
+
+/* Management / Team section */
+.management-section {
+  padding: 3.5rem 1rem 6rem;
+  background: linear-gradient(180deg, rgba(8,18,34,0.92) 0%, rgba(6,12,24,0.86) 100%);
+}
+.management-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.management-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.management-header h2 {
+  color: var(--text-light);
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.management-header h2 {
+  color: var(--text-light);
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.management-header p {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  max-width: 80ch;
+  line-height: 1.6;
+}
+.management-header p {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  max-width: 80ch;
+  line-height: 1.6;
+}
+.management-grid {
+  display: grid;
+  /* three columns on wide screens; switch to 2 columns at the site-wide
+     navigation breakpoint so the layout remains balanced when header
+     collapses. Use a slightly larger gap so gradient borders don't touch. */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  margin-top: 1rem;
+  align-items: stretch; /* make cards match heights for clean grid seams */
+}
+.manager-card {
+  background: rgba(255,255,255,0.02);
+  border: 2px solid transparent; /* gradient border via border-image */
+  border-radius: 12px;
+  padding: 1.3rem 1rem 1.6rem;
+  text-align: center;
+  color: var(--text-light);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.45), 0 0 12px rgba(252,3,105,0.04);
+  transition: transform .22s cubic-bezier(.22,.9,.35,1), box-shadow .22s ease, border-color .22s ease;
+  border-image: linear-gradient(90deg,#ff2a7f,#fc0369) 1;
+  position: relative;
+  box-sizing: border-box; /* ensure padding+borders don't alter layout math */
+  display: flex;
+  flex-direction: column; /* allow content to stretch vertically */
+  justify-content: flex-start;
+  min-height: 220px; /* prevents very short cards so grid rows align better */
+}
+.manager-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(2,6,23,0.55), 0 0 30px rgba(252,3,105,0.12);
+}
+.manager-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(2,6,23,0.55), 0 0 30px rgba(252,3,105,0.12);
+}
+.manager-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.manager-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.manager-avatar img {
+  width: 88%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.manager-avatar img {
+  width: 88%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.manager-role {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.45rem;
+  font-weight: 700;
+}
+.manager-role {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.45rem;
+  font-weight: 700;
+}
+.manager-name {
+  font-weight: 800;
+  margin: 0;
+  font-size: 1rem;
+}
+.manager-name {
+  font-weight: 800;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Hierarchy layout tweaks (class-based): primary leader, leaders, staff */
+.management-grid {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  align-items: stretch;
+}
+.management-grid {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  align-items: stretch;
+}
+.management-grid .manager-card {
+  width: 100%;
+}
+.management-grid .manager-card {
+  width: 100%;
+}
+
+/* Primary leader spans full width and is centered (keeps layout but unified sizing) */
+.management-grid .leader-primary {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+
+/* Unified sizes for all manager cards and avatars */
+.management-grid .manager-card {
+  max-width: 360px;
+  width: 100%;
+}
+.management-grid .manager-card {
+  max-width: 360px;
+  width: 100%;
+}
+.management-grid .manager-avatar {
+  width: 140px;
+  height: 140px;
+}
+.management-grid .manager-avatar {
+  width: 140px;
+  height: 140px;
+}
+.management-grid .manager-name {
+  font-size: 1rem;
+}
+.management-grid .manager-name {
+  font-size: 1rem;
+}
+
+@media (max-width: 1236px) {
+  .management-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 760px) {
+  .management-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .management-grid {
+    grid-template-columns: 1fr;
+  }
+  .manager-avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+/* Achievements section */
+.achievements-section {
+  padding: 3.25rem 1rem 4rem;
+  background: linear-gradient(180deg, rgba(6,12,24,0.88), rgba(7,13,25,0.92));
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+.achievements-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.achievements-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.achievements-header h2 {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.achievements-header h2 {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.achievements-header p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  max-width: 80ch;
+}
+.achievements-header p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  max-width: 80ch;
+}
+.metrics-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 1.6rem auto 0;
+}
+.metrics-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 1.6rem auto 0;
+}
+.metric {
+  text-align: center;
+  flex: 1 1 0;
+}
+.metric {
+  text-align: center;
+  flex: 1 1 0;
+}
+.metric-number {
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.6rem, 8vw, 6.4rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2.8px;
+  -webkit-text-stroke-color: var(--accent-blue);
+  text-shadow: 0 6px 12px rgba(2,6,23,0.6);
+}
+.metric-number.accent-pink {
+  -webkit-text-stroke-color: var(--accent-pink);
+}
+.metric-number.accent-pink {
+  -webkit-text-stroke-color: var(--accent-pink);
+}
+.metric-label {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Counter reveal animation: JS will add `.animated` when visible */
+.stat-number {
+  opacity: 0;
+  transform: translateY(8px) scale(0.99);
+}
+.stat-number.animated {
+  animation: statPop 700ms cubic-bezier(.22,.9,.35,1) forwards;
+}
+@keyframes statPop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.metric-label {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+  .metrics-grid {
+    gap: 1.4rem;
+  }
+}
+@media (max-width: 760px) {
+  .metrics-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .metric {
+    width: 100%;
+  }
+  .metric-number {
+    font-size: clamp(2.2rem, 12vw, 4.6rem);
+    -webkit-text-stroke-width: 2.4px;
+  }
+}
+
+/* Contact section styles */
+.contact-section {
+  padding: 3.25rem 1rem 4rem;
+  background: linear-gradient(180deg, rgba(6,12,24,0.9), rgba(7,13,25,0.94));
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-header h2 {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  margin: 0 0 0.35rem;
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-weight: 900;
+}
+.contact-header p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 80ch;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.25rem;
+}
+.contact-info {
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-info .info-item strong {
+  display: block;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+.contact-info .info-item p {
+  margin: 0;
+  color: var(--muted);
+}
+.contact-info a {
+  color: var(--accent-pink);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 1.6rem 1.6rem 3.4rem; /* extra bottom padding to make room for the button */
+  border-radius: 16px;
+  box-shadow: 0 18px 42px rgba(2,6,23,0.55), inset 0 1px 0 rgba(255,255,255,0.01);
+}
+.contact-form::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+.contact-form .form-row {
+  margin-bottom: 0.9rem;
+  display: block;
+}
+.contact-form .form-row input[type="text"],
+.contact-form .form-row input[type="email"],
+.contact-form .form-row textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--text-light);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.01), 0 8px 20px rgba(2,6,23,0.45);
+}
+.contact-form .form-row input::placeholder,
+.contact-form .form-row textarea::placeholder {
+  color: rgba(223,230,234,0.6);
+}
+.contact-form .form-row textarea {
+  resize: vertical;
+}
+.contact-form .form-row.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.contact-form .form-row.form-actions {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+  box-shadow: 0 10px 30px rgba(43,120,255,0.12), 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 160ms cubic-bezier(.22,.9,.35,1), box-shadow 160ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .form-row.form-actions {
+    position: static;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* CTA / Join Section styles */
+.cta-section {
+  padding: 3.5rem 1rem 5rem;
+  /* match partners section background */
+  background: linear-gradient(180deg, rgba(8,18,34,0.92) 0%, rgba(6,12,24,0.86) 100%);
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+.cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-header h2 {
+  color: var(--text-light);
+  font-family: 'League Spartan', 'Exo 2', sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  margin: 0 0 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+}
+
+.cta-header .cta-lead {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.cta-card {
+  background: rgba(255,255,255,0.01);
+  border-radius: 12px;
+  padding: 1.6rem;
+  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 14px 36px rgba(2,6,23,0.45);
+  text-align: left;
+}
+
+.cta-card-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.cta-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.label {
+  display: inline-block;
+  padding: 0.18rem 0.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.label-pink {
+  background: linear-gradient(90deg, rgba(255,42,127,0.07), rgba(43,120,255,0.02));
+  color: var(--accent-pink);
+}
+
+.label-purple {
+  background: linear-gradient(90deg, rgba(122,60,200,0.04), rgba(255,42,127,0.02));
+  color: #caa0ff;
+}
+
+.label-blue {
+  background: linear-gradient(90deg, rgba(43,120,255,0.06), rgba(14,165,255,0.02));
+  color: var(--accent-blue);
+}
+
+.cta-action {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 900;
+  color: #fff;
+  /* lighter: increase alpha for more visible button */
+  background-color: rgba(255,255,255,0.06);
+  box-shadow: 0 14px 36px rgba(255,255,255,0.06);
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-cta:hover {
+  background-color: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(255,255,255,0.12);
+}
+
+.btn-cta .btn-arrow {
+  margin-left: 0.6rem;
+  opacity: 0.95;
+}
+
+@media (max-width: 1200px) {
+  .cta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card {
+    text-align: center;
+  }
+}
+
 
 

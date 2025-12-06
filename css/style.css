@@ -148,9 +148,9 @@ main {
 }
 
 /* Keep nav links visually centered across desktop/tablet by absolute-centering
-   them within the header. This prevents logo/social widths from shifting
-   the visual center as the screen narrows. Only apply when hamburger is hidden. */
-@media (min-width: 1025px) {
+  them within the header. This prevents logo/social widths from shifting
+  the visual center as the screen narrows. Only apply when hamburger is hidden. */
+@media (min-width: 1237px) {
   .nav-links {
     position: absolute;
     left: 50%;
@@ -221,7 +221,7 @@ main {
   box-shadow: 0 0 10px rgba(252, 3, 105, 0.5);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1236px) {
   .navbar-logo img {
     height: 50px;
   }
@@ -295,9 +295,18 @@ main {
 
   /* When overlay is open, hide the header logo to avoid duplication */
   /* Hide large header logo when overlay is open */
-  body.overlay-open .navbar-logo { display: none; }
-  body.overlay-open .navbar { background-color: #0B0F29; background-image: none; }
-  body.overlay-open { overflow: hidden; }
+  body.overlay-open .navbar-logo {
+    display: none;
+  }
+
+  body.overlay-open .navbar {
+    background-color: #0B0F29;
+    background-image: none;
+  }
+
+  body.overlay-open {
+    overflow: hidden;
+  }
   /* Position the logo centered in the mobile overlay and above the close button */
   .navbar-logo {
     position: absolute;
@@ -321,7 +330,10 @@ main {
   }
 
   /* ensure hamburger is visible on mobile */
-  .hamburger { display: flex; z-index: 1001; }
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
 
   .nav-menu.active {
     left: 0;
@@ -527,6 +539,7 @@ main {
   background-image: none;
   color: #dfe6ea;
   padding: 40px 2rem 28px;
+  margin-top: auto; /* ensure footer sticks to bottom when page content is short */
 }
 .site-footer .footer-inner {
   max-width: 1200px;
@@ -612,7 +625,7 @@ main {
 }
 
 /* Tablet: stack brand and nav, keep bottom row */
-@media (max-width: 1024px) {
+@media (max-width: 1236px) {
   .footer-top {
     flex-direction: column;
     align-items: center;
