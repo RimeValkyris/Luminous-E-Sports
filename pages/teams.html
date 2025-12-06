@@ -24,6 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- social icons use local images (Font Awesome removed) -->
     <meta name="description" content="" />
   </head>
 
@@ -78,6 +79,7 @@
 
     <!--START MAIN BODY HERE!!!-->
     <!-- Teams banner: uses image file `img/TEAMS-BANNER.jpg` -->
+     <main>
     <section class="teams-banner" role="banner" aria-label="Teams banner">
       <div class="banner-overlay">
         <div class="banner-content">
@@ -88,8 +90,130 @@
       </div>
     </section>
 
-    <!-- Players and Coaching sections removed -->
+    <!-- Player cards section -->
+    <section class="players-section" aria-label="Team roster">
+      <div class="players-inner">
+        <h3 class="players-heading">Meet The Players</h3>
+        <p class="players-intro">Our talented roster bringing strategy and passion to every match.</p>
 
+        <div class="players-grid">
+          <!-- Player Card 1 -->
+          <article class="player-card">
+            <div class="player-photo" aria-hidden="true">
+              <img src="https://wallpapers.com/images/hd/pixel-3xl-red-dead-redemption-2-background-arthur-morgan-black-suit-a3z0xbsqbqrczt1a.jpg" alt="Player One photo" />
+            </div>
+            <div class="player-info">
+              <h4 class="player-name">Aiden "Blaze" K.</h4>
+              <div class="player-role">In-Game Leader</div>
+              <ul class="player-socials" aria-hidden="true">
+                <li><img src="../img/twitch.png" alt=""/></li>
+                <li><img src="../img/discord.png" alt=""/></li>
+                <li><img src="../img/x.png" alt=""/></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Player Card 2 -->
+          <article class="player-card">
+            <div class="player-photo" aria-hidden="true">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3O_c6D7A_G1492IdPaME4AyyUeLk9cEzAVw&s" alt="Player Two photo" />
+            </div>
+            <div class="player-info">
+              <h4 class="player-name">Maya "Vex" L.</h4>
+              <div class="player-role">Fragger</div>
+              <ul class="player-socials" aria-hidden="true">
+                <li><img src="../img/twitch.png" alt=""/></li>
+                <li><img src="../img/discord.png" alt=""/></li>
+                <li><img src="../img/x.png" alt=""/></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Player Card 3 -->
+          <article class="player-card">
+            <div class="player-photo" aria-hidden="true">
+              <img src="https://static.wikia.nocookie.net/reddeadredemption/images/c/cf/John_Marston_1907_Cowboy_Outfit.jpg" alt="Player Three photo" />
+            </div>
+            <div class="player-info">
+              <h4 class="player-name">Jonas "Drift" R.</h4>
+              <div class="player-role">Support</div>
+              <ul class="player-socials" aria-hidden="true">
+                <li><img src="../img/twitch.png" alt=""/></li>
+                <li><img src="../img/discord.png" alt=""/></li>
+                <li><img src="../img/x.png" alt=""/></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Player Card 4 -->
+          <article class="player-card">
+            <div class="player-photo" aria-hidden="true">
+              <img src="https://static.wikia.nocookie.net/reddeadredemption/images/b/b4/UncleNew.PNG" alt="Player Four photo" />
+            </div>
+            <div class="player-info">
+              <h4 class="player-name">Sofia "Nyx" G.</h4>
+              <div class="player-role">Strategist</div>
+              <ul class="player-socials" aria-hidden="true">
+                <li><img src="../img/twitch.png" alt=""/></li>
+                <li><img src="../img/discord.png" alt=""/></li>
+                <li><img src="../img/x.png" alt=""/></li>
+              </ul>
+            </div>
+          </article>
+
+            <article class="player-card">
+            <div class="player-photo" aria-hidden="true">
+              <img src="https://static.wikia.nocookie.net/reddeadredemption/images/8/87/RDR2_Dutch_van_der_Linde_PC.png" alt="Player Three photo" />
+            </div>
+            <div class="player-info">
+              <h4 class="player-name">Jonas "Drift" R.</h4>
+              <div class="player-role">Support</div>
+              <ul class="player-socials" aria-hidden="true">
+                <li><img src="../img/twitch.png" alt=""/></li>
+                <li><img src="../img/discord.png" alt=""/></li>
+                <li><img src="../img/x.png" alt=""/></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coaches section (two cards) -->
+    <section class="coaches-section" aria-label="Coaching staff">
+      <div class="coaches-inner">
+        <h3 class="coaches-heading">Meet The Coaches</h3>
+        <p class="coaches-intro">Our coaching staff prepares the team with strategies, analysis and training.</p>
+
+        <div class="coaches-grid">
+          <!-- Coach Card 1 -->
+          <article class="coach-card">
+            <div class="coach-photo" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=80&auto=format&fit=crop" alt="Head Coach photo" />
+            </div>
+            <div class="coach-info">
+              <h4 class="coach-name">Liam "Resolve" H.</h4>
+              <div class="coach-role">Head Coach</div>
+              
+            </div>
+          </article>
+
+          <!-- Coach Card 2 -->
+          <article class="coach-card">
+            <div class="coach-photo" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&q=80&auto=format&fit=crop" alt="Analyst photo" />
+            </div>
+            <div class="coach-info">
+              <h4 class="coach-name">Rosa "Metrics" P.</h4>
+              <div class="coach-role">Analyst</div>
+              
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+</main>
     <!--END MAIN BODY HERE!!!-->
 
     <footer class="site-footer">

@@ -24,7 +24,7 @@
 }
 
 .banner-title {
-	font-family: 'League Spartan', sans-serif;
+	font-family: 'Exo 2', sans-serif;
 	font-size: 20px;
 	letter-spacing: 2px;
 	margin: 0 0 8px 0;
@@ -44,11 +44,238 @@
 
 .banner-desc {
 	max-width: 560px;
-	color: rgba(255, 255, 255, 0.95);
+	color: rgba(245, 245, 245, 0.95);
 	margin: 0;
 	font-size: 16px;
 	line-height: 1.5;
 }
+
+
+/* Player cards styles */
+.players-section {
+	max-width: 1400px;
+	margin: 36px auto;
+	padding: 24px;
+}
+.players-inner {
+	padding: 16px 20px;
+}
+
+.players-heading {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 28px;
+	margin: 0 0 6px 0;
+	text-transform: uppercase;
+}
+.players-intro {
+	color: rgba(255, 255, 255, 0.95);
+	margin: 0 0 18px 0;
+}
+.players-grid {
+	display: grid;
+	/* default: larger cards (3 columns) on typical desktop widths */
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+.player-card {
+	/* keep card transparent so only the photo shows; overlay provides white panel on hover */
+	background: transparent;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 8px 26px rgba(0,0,0,0.10);
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	transition: transform 220ms ease, box-shadow 220ms ease;
+	/* let card size be driven by its contents (image); remove forced min-height */
+	min-height: auto;
+	position: relative;
+}
+.player-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 16px 44px rgba(0,0,0,0.14);
+}
+.player-photo {
+	width: 100%;
+	/* force a uniform, taller photo height for consistent grid */
+	height: 460px;
+	background: #111;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* ensure the image area respects the card's rounding */
+	mask-image: radial-gradient(rgb(245, 245, 245), black);
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	overflow: hidden;
+}
+.player-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.player-info {
+	/* overlay box that appears on hover */
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(11, 19, 41, 0.98);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	padding: 18px 20px;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+	z-index: 5;
+}
+
+.player-card:hover .player-info {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Show overlay when toggled via JS on touch devices */
+.player-card.show-info .player-info {
+	transform: translateY(0);
+	opacity: 1;
+}
+.player-name {
+	font-family: 'Exo 2', sans-serif;
+	margin: 0 0 6px 0;
+	font-size: 18px;
+	line-height: 1.1;
+	color: #1653EF;
+}
+.player-role {
+	color: #FC0369;
+	font-size: 14px;
+	margin-bottom: 12px;
+}
+.player-socials {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* socials removed visually */
+	display: none !important;
+}
+.player-socials li img {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+
+/* Responsive tweaks */
+/* Medium screens */
+@media (max-width: 1100px) {
+	.player-photo { height: 480px; }
+}
+
+/* Smaller tablets / large phones */
+@media (max-width: 900px) {
+	/* make photos taller on smaller devices for a stronger visual */
+	.player-photo { height: 460px; }
+}
+
+/* Mobile phones */
+@media (max-width: 560px) {
+	/* taller photos on phones */
+	.player-photo { height: 380px; }
+}
+
+/* Extra-large screens: increase photo size further */
+@media (min-width: 1600px) {
+	.player-photo { height: 520px; }
+}
+
+/* Note: no mobile fallback — overlay appears only on hover */
+@media (max-width: 560px) {
+	.players-grid { grid-template-columns: 1fr; }
+	.players-heading { font-size: 22px; }
+}
+
+/* Extra-large screens: show 4 columns */
+@media (min-width: 1400px) {
+	.players-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+
+/* Coaches section styles (two-card layout) */
+.coaches-section {
+	/* match players-section dimensions so both align visually */
+	max-width: 1400px;
+	margin: 36px auto;
+	padding: 24px;
+}
+.coaches-inner { padding: 16px 20px; }
+.coaches-heading {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 28px;
+	margin: 0 0 6px 0;
+	text-transform: uppercase;
+}
+.coaches-intro { color: rgba(255,255,255,0.95); margin: 0 0 18px 0; }
+.coaches-grid {
+	/* left-align fixed-width coach cards so they sit under the heading */
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+.coach-card {
+	background: transparent;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 8px 26px rgba(0,0,0,0.10);
+	display: flex;
+	flex-direction: column;
+	transition: transform 220ms ease, box-shadow 220ms ease;
+	position: relative;
+	/* fixed width matching player card in 3-column layout */
+	width: 435px;
+	box-sizing: border-box;
+}
+.coach-card:hover { transform: translateY(-8px); box-shadow: 0 14px 36px rgba(0,0,0,0.12); }
+.coach-photo { width: 100%; height: 460px; background: #111; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.coach-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.coach-info {
+	position: absolute; left:0; right:0; bottom:0;
+	background: rgba(11,19,41,0.98);
+	padding: 14px 18px;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+	z-index: 5;
+}
+.coach-card:hover .coach-info { transform: translateY(0); opacity: 1; }
+.coach-name { font-family: 'Exo 2', sans-serif; margin: 0 0 6px 0; font-size: 18px; color: #1653EF; }
+.coach-role { color: #FC0369; font-size: 14px; margin-bottom: 12px; }
+.coach-socials { display: none !important; }
+
+@media (min-width: 1400px) {
+	/* on very wide screens player grid becomes 4 columns; player-card width is 320px there */
+	.coach-card { width: 320px; }
+}
+@media (max-width: 1400px) {
+	/* below very wide screens keep coach cards at the 3-column player width (435px) */
+	.coach-card { width: 435px; }
+}
+@media (max-width: 1100px) {
+	.coach-photo { height: 480px; }
+}
+@media (max-width: 900px) {
+	.coach-photo { height: 460px; }
+}
+@media (max-width: 560px) {
+	.coach-photo { height: 380px; }
+	.coaches-grid { grid-template-columns: 1fr; }
+	.coaches-heading { font-size: 20px; }
+}
+@media (min-width: 1600px) {
+	.coach-photo { height: 520px; }
+}
+
 
 
 

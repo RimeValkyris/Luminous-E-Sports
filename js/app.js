@@ -257,3 +257,63 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Tap-to-toggle player info overlay for touch devices
+(function() {
+  // Only enable on coarse pointers (most touch devices)
+  const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (!isTouch) return;
+
+  const cards = document.querySelectorAll('.player-card');
+  if (!cards || cards.length === 0) return;
+
+  // Helper to remove show state from all cards
+  function clearAll() {
+    cards.forEach(c => c.classList.remove('show-info'));
+  }
+
+  // Close when tapping outside any card
+  function onDocTouch(e) {
+    if (!e.target.closest || !e.target.closest('.player-card')) {
+      clearAll();
+    }
+  }
+
+  cards.forEach(card => {
+    // use touchstart so the overlay appears immediately
+    card.addEventListener('touchstart', (e) => {
+      const already = card.classList.contains('show-info');
+      // remove from others
+      clearAll();
+      if (!already) {
+        card.classList.add('show-info');
+        // add a short-lived document listener to close when tapping elsewhere
+        document.addEventListener('touchstart', onDocTouch, { passive: true });
+        // auto-hide after 6 seconds; clear any previous timer
+        if (card.dataset.hideTimer) {
+          clearTimeout(Number(card.dataset.hideTimer));
+          delete card.dataset.hideTimer;
+        }
+        const t = setTimeout(() => {
+          card.classList.remove('show-info');
+          document.removeEventListener('touchstart', onDocTouch);
+          delete card.dataset.hideTimer;
+        }, 6000);
+        card.dataset.hideTimer = String(t);
+      } else {
+        // manual close: clear timer if present
+        if (card.dataset.hideTimer) {
+          clearTimeout(Number(card.dataset.hideTimer));
+          delete card.dataset.hideTimer;
+        }
+        card.classList.remove('show-info');
+        document.removeEventListener('touchstart', onDocTouch);
+      }
+      // prevent the touch from triggering other handlers
+      // allow event to continue if the target is an interactive element
+      const interactive = e.target.closest('a, button, input, label');
+      if (interactive) return;
+      e.stopPropagation();
+    }, { passive: true });
+  });
+})();
+
