@@ -546,6 +546,8 @@
   }
   .value-card.featured {
     grid-column: 1 / -1;
+    /* On narrower two-column layouts make featured card wider and centered */
+    width: min(720px, 90%);
   }
 }
 
@@ -561,6 +563,13 @@
   }
   .value-card {
     padding: 1rem;
+  }
+  /* On single-column mobile ensure featured card spans the content area */
+  .value-card.featured {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    text-align: left;
   }
 }
 
