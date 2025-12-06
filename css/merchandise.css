@@ -3,7 +3,6 @@ body{
 }
 .banner-container{
   margin-top: 20px;
-  background-color: #b3d4fc;
   height: 220px;
   position: relative;
   
@@ -26,14 +25,27 @@ body{
 .img-container{
     margin: 120px 100px 0px 100px;
     height: 560px;
-    background-color: grey;
     position: relative;
     
 }
-.img-container img{
+.slide-fade{
+    height: 560px;
+
+}
+.slide-fade img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.slide-fade{
+    display: none;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
 }
 .img-text{
     position: absolute;
@@ -67,7 +79,6 @@ body{
     border: 1px solid rgb(22, 83, 239);
 }
 .small-img-container{
-    background-color: antiquewhite;
     height: 400px;
     overflow: hidden;
 }
