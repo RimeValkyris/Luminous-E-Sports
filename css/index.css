@@ -188,11 +188,19 @@ h4 {
 
 /* News highlight section */
 .news-highlight {
-  margin: 3.5rem 0 0;
-  padding: 2.5rem 1.25rem 4rem;
+  /* increased top spacing so the 'Trending Reports' eyebrow has room above */
+  margin: 5.5rem 0 0;
+  padding: 3.5rem 1.25rem 4rem;
   background: linear-gradient(180deg, rgba(6, 12, 30, 0.95), rgba(7, 15, 43, 0.92));
   border-radius: 0;
   box-shadow: 0 20px 45px rgba(2, 6, 20, 0.55);
+}
+
+@media (max-width: 760px) {
+  .news-highlight {
+    margin-top: 3.5rem; /* keep compact spacing on small screens */
+    padding-top: 2.0rem;
+  }
 }
 
 .news-highlight__intro {
@@ -219,8 +227,21 @@ h4 {
 
 .news-highlight__summary {
   color: #b9c2d6;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.6;
+  text-align: left;
+}
+
+/* On smaller screens keep the intro centered for better layout */
+@media (max-width: 760px) {
+  .news-highlight__intro {
+    margin-left: 0;
+    text-align: center;
+  }
+  .news-highlight__summary {
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 .news-card-grid {
