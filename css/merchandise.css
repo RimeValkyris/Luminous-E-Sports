@@ -1,20 +1,16 @@
-
-body {
-    height: 5000px;
-
 body{
     height: 4795px;
 }
+.banner-container{
+  margin-top: 20px;
+  height: 220px;
+  position: relative;
+  
+  
 
-.banner-container {
-    margin-top: 20px;
-    background-color: #b3d4fc;
-    height: 220px;
-    position: relative;
 }
-
-.banner-text {
-    position: absolute;
+.banner-text{
+    position:absolute ;
     left: 480px;
     top: 70px;
     font-family: "Wix Madefor Display", sans-serif;
@@ -22,91 +18,84 @@ body{
     text-align: center;
     font-size: 50px;
 }
-
-.banner-image {
+.banner-image{
     width: 100%;
     height: 100%;
 }
-
-.img-container {
+.img-container{
     margin: 120px 100px 0px 100px;
     height: 560px;
     position: relative;
+    
 }
+.slide-fade{
+    height: 560px;
 
-.img-container img {
+}
+.slide-fade img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.slide-fade{
+    display: none;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
 
-.img-text {
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+.img-text{
     position: absolute;
     bottom: 50px;
     left: 50px;
     font-weight: bold;
     line-height: 20px;
 }
-
-.M-big-container {
+.M-big-container{
     margin: 0px 45px;
     font-family: "Wix Madefor Display", sans-serif;
-}
 
-.M-big-container h1 {
+}
+.M-big-container h1{
     font-size: 50px;
     color: white;
     margin-left: 50px;
 }
-
-.M-sub-container {
+.M-sub-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 60px;
-    margin: 0 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 60px;
+    align-items: start;
 }
-
-.M-small-container {
-    background-color: rgb(13, 21, 32);
-    height: 550px;
+.M-small-container{
+     background-color: rgb(13, 21, 32);
+    height:550px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgb(22, 83, 239);
 }
-
-.small-img-container {
-    background-color: antiquewhite;
+.small-img-container{
     height: 400px;
     overflow: hidden;
 }
-
-.small-img-container img {
+.small-img-container img{
     width: 100%;
     height: 100%;
     transform: scale(1.1);
     
 }
-
-.small-text-container {
+.small-text-container{
     line-height: 10px;
-
-    margin-top: 40px;
-    margin-left: 10px;
-
    margin-top: 40px;
    margin-left: 10px;
    padding-left: 15px;
-
 }
-
-.small-img-container h2 {
+.small-img-container h2{
     font-size: 60px;
 }
-
-
-.small-text-container p {
-    font-size: 14px;
-
 .small-text-container p{
     font-size: 12px;
 }
@@ -119,11 +108,10 @@ body{
     color: white;
     margin-left: 50px;
 }
-/* DESKTOP/DEFAULT STYLES */
-.M-sub-container{
+.M-sub-container{ /* ensure grid fallback is consistent */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 60px;
 }
 .slider-track {
     display: contents; 
@@ -175,14 +163,16 @@ body{
 }
 .M-medsub-container{
     display: flex;
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     gap: 15px;
 }
 .M-medsub-container img{
     width: 100%;
 }
 .checkout-div-three{
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     margin-top: 15px;
 }
 .checkout-div-three img{
@@ -365,4 +355,54 @@ body{
     height: 40px;
 
 }
+}
+/* Responsive breakpoints for merchandise cards and containers */
+@media screen and (max-width: 1200px) {
+    .M-sub-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+    }
+    .long-offer-container {
+        width: 90%;
+        margin: 40px auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .M-sub-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+    }
+    .M-small-container{
+        height: auto;
+    }
+    .small-img-container{
+        height: 320px;
+    }
+    .M-big-container h1{
+        font-size: 44px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .M-sub-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .small-img-container{
+        height: 260px;
+    }
+    .M-big-container h1{
+        font-size: 36px;
+    }
+    .M-medium-container, .M-medsub-container, .checkout-div-three{
+        width: 100%;
+        margin: 0 12px;
+    }
+    .long-offer-container{
+        width: 95%;
+        margin: 20px auto;
+        height: auto;
+        padding: 20px;
+    }
 }
