@@ -257,6 +257,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Scroll animations removed — no-op placeholder
+
 // Tap-to-toggle player info overlay for touch devices
 (function() {
   // Only enable on coarse pointers (most touch devices)
@@ -316,4 +318,58 @@ window.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   });
 })();
+
+// Enable hover-like effect while click-dragging across job cards
+document.addEventListener('DOMContentLoaded', () => {
+  const jobsGrid = document.querySelector('.jobs-grid');
+  if (!jobsGrid) return;
+
+  const cardSelector = '.job-card-pink, .job-card-blue';
+  let dragging = false;
+  let currentCard = null;
+
+  function setDraggingCard(card) {
+    if (currentCard && currentCard !== card) currentCard.classList.remove('dragging');
+    currentCard = card;
+    if (currentCard) currentCard.classList.add('dragging');
+  }
+
+  function clearDragging() {
+    dragging = false;
+    if (currentCard) {
+      currentCard.classList.remove('dragging');
+      currentCard = null;
+    }
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  }
+
+  function onMouseMove(e) {
+    if (!dragging) return;
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    if (!el) return;
+    const card = el.closest(cardSelector);
+    if (card) {
+      setDraggingCard(card);
+    } else if (currentCard) {
+      currentCard.classList.remove('dragging');
+      currentCard = null;
+    }
+  }
+
+  function onMouseUp() {
+    clearDragging();
+  }
+
+  jobsGrid.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    dragging = true;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+    const startCard = e.target.closest(cardSelector);
+    if (startCard) setDraggingCard(startCard);
+  });
+
+  window.addEventListener('blur', clearDragging);
+});
 

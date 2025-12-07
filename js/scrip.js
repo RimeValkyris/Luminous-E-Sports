@@ -3,26 +3,26 @@ let slideInterval;
 
 function startSlideshow(){
     clearInterval(slideInterval);
-
-    slideInterval = setInterval (showSlides, 4000);
+    // show the first slide immediately to avoid an empty carousel on load
+    showSlides();
+    slideInterval = setInterval(showSlides, 4000);
 }
 
 function showSlides(){
-    let slides = document.getElementsByClassName("slide-fade");
+    const slides = document.getElementsByClassName("slide-fade");
+    if (!slides || slides.length === 0) return;
 
-    for(let i = 0; i< slides.length; i++){
-        slides [i].style.display = "none";
+    // hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
 
-    slideIndex++;
+    // advance index and wrap using modulo
+    slideIndex = (slideIndex + 1) % slides.length;
 
-    if(slideIndex > slides.length){
-        slideIndex = 1;
-
-    }
-
-    slides[slideIndex - 1].style.display = "block";
+    // display current slide
+    slides[slideIndex].style.display = "block";
 }
 
-
+// start when script loads
 startSlideshow();

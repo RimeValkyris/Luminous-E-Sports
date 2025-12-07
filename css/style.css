@@ -632,6 +632,7 @@ main {
     justify-content: center; /* Fixes large vertical gap */
     text-align: center;
   }
+}
 
 /* Mobile: vertical stack, center everything */
 @media (max-width: 767px) {
@@ -663,7 +664,8 @@ main {
   }
 }
 
-}
+
+
 
 
 
