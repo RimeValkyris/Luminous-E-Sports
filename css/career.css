@@ -280,17 +280,29 @@ body {
 
 /* Stagger animation for job cards */
 .jobs-grid .job-card-pink:nth-child(1),
-.jobs-grid .job-card-blue:nth-child(1) { animation-delay: 2.0s; }
+.jobs-grid .job-card-blue:nth-child(1) {
+  animation-delay: 2.0s;
+}
 .jobs-grid .job-card-pink:nth-child(2),
-.jobs-grid .job-card-blue:nth-child(2) { animation-delay: 2.1s; }
+.jobs-grid .job-card-blue:nth-child(2) {
+  animation-delay: 2.1s;
+}
 .jobs-grid .job-card-pink:nth-child(3),
-.jobs-grid .job-card-blue:nth-child(3) { animation-delay: 2.2s; }
+.jobs-grid .job-card-blue:nth-child(3) {
+  animation-delay: 2.2s;
+}
 .jobs-grid .job-card-pink:nth-child(4),
-.jobs-grid .job-card-blue:nth-child(4) { animation-delay: 2.3s; }
+.jobs-grid .job-card-blue:nth-child(4) {
+  animation-delay: 2.3s;
+}
 .jobs-grid .job-card-pink:nth-child(5),
-.jobs-grid .job-card-blue:nth-child(5) { animation-delay: 2.4s; }
+.jobs-grid .job-card-blue:nth-child(5) {
+  animation-delay: 2.4s;
+}
 .jobs-grid .job-card-pink:nth-child(6),
-.jobs-grid .job-card-blue:nth-child(6) { animation-delay: 2.5s; }
+.jobs-grid .job-card-blue:nth-child(6) {
+  animation-delay: 2.5s;
+}
 
 .icon-wrapper {
   width: 120px;
@@ -358,18 +370,36 @@ body {
 }
 
 /* ensure transform origin and preserve 3d for smooth effect */
-.job-card-pink, .job-card-blue { transform-origin: center; will-change: transform; }
+.job-card-pink,
+.job-card-blue {
+  transform-origin: center;
+  will-change: transform;
+}
 
 @media (min-width: 769px) and (max-width: 1099px) {
-  .hero { height: 55vh; }
-  .hero-content { max-width: 540px; padding-left: 7%; }
+  .hero {
+    height: 55vh;
+  }
+  .hero-content {
+    max-width: 540px;
+    padding-left: 7%;
+  }
   .culture-wrapper,
-  .benefits-wrapper { width: 85%; }
+  .benefits-wrapper {
+    width: 85%;
+  }
   .culture-wrapper h2,
-  .benefits-wrapper h2 { font-size: 2.2rem; }
-  .culture-content { gap: 80px; flex-wrap: nowrap; }
+  .benefits-wrapper h2 {
+    font-size: 2.2rem;
+  }
+  .culture-content {
+    gap: 80px;
+    flex-wrap: nowrap;
+  }
   .culture-content img,
-  .benefits-content img { width: 420px; }
+  .benefits-content img {
+    width: 420px;
+  }
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -377,21 +407,38 @@ body {
     max-width: 1000px;
   }
   .job-card-pink,
-  .job-card-blue { width: 280px; height: 400px; }
+  .job-card-blue {
+    width: 280px;
+    height: 400px;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
-  .jobs-grid { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+  .jobs-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
   .culture-wrapper,
-  .benefits-wrapper { width: 85%; }
+  .benefits-wrapper {
+    width: 85%;
+  }
 
   .culture-wrapper h2,
-  .benefits-right h2 { font-size: 2.3rem; margin-bottom: 5px;}
+  .benefits-right h2 {
+    font-size: 2.3rem;
+    margin-bottom: 5px;
+  }
   /* keep heading aligned with medium-size image */
-  .benefits-wrapper h2 { max-width: 420px; margin-left: auto; text-align: right; }
+  .benefits-wrapper h2 {
+    max-width: 420px;
+    margin-left: auto;
+    text-align: right;
+  }
 
   .culture-text,
-  .benefits-text { font-size: 1rem; line-height: 1.35; }
+  .benefits-text {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
 
   .benefits-text ul {
     padding-left: 0;
@@ -399,22 +446,35 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero { 
+  .hero {
     height: 30vh;
     background: url('../img/hero-section-career.png') center/cover no-repeat;
     background-position: center 35%;
     background-size: cover;
   }
 
-  .hero-content { max-width: 360px; padding-left: 6%; }
-  .hero-content h1 { font-size: 2.6rem; }
-  .hero-content p  { font-size: 1.15rem; }
+  .hero-content {
+    max-width: 360px;
+    padding-left: 6%;
+  }
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+  .hero-content p {
+    font-size: 1.15rem;
+  }
 
   .culture-wrapper,
-  .benefits-wrapper { width: 85%; }
+  .benefits-wrapper {
+    width: 85%;
+  }
 
   .culture-wrapper h2,
-  .benefits-right h2 { font-size: 1.9rem; text-align: center; margin-bottom: 5px;}
+  .benefits-right h2 {
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 5px;
+  }
 
   .culture-content,
   .benefits-content {
@@ -422,11 +482,20 @@ body {
     gap: 18px;
     align-items: flex-start;
   }
-  .benefits-content { flex-direction: column-reverse; }
+  .benefits-content {
+    flex-direction: column-reverse;
+  }
   .culture-content img,
-  .benefits-img { width: 100%; height: auto; border-radius: 6px; }
+  .benefits-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
   .culture-text,
-  .benefits-text { font-size: 1rem; line-height: 1.35; }
+  .benefits-text {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
   .culture-text ul,
   .benefits-text ul {
     padding-left: 1.25rem;
@@ -446,70 +515,132 @@ body {
     padding-bottom: 30px;
   }
   .job-card-pink,
-  .job-card-blue { width: 70%; height: auto; padding: 40px; border-radius: 12px; padding-bottom: 80px;}
+  .job-card-blue {
+    width: 70%;
+    height: auto;
+    padding: 40px;
+    border-radius: 12px;
+    padding-bottom: 80px;
+  }
 
-  .icon-wrapper { width: 90px; height: 90px; }
-  .icon-wrapper img { width: 90px; height: auto; }
+  .icon-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+  .icon-wrapper img {
+    width: 90px;
+    height: auto;
+  }
 
-  .jobs-title { font-size: 2.2rem; margin-bottom: 10px; }
+  .jobs-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 420px) {
-  .hero { 
+  .hero {
     height: 20vh;
     background: url('../img/hero-section-career.png') center/cover no-repeat;
     background-position: center 25%;
     background-size: cover;
   }
-  .hero-content { max-width: 250px; padding-left: 5%; }
-  .hero-content h1 { font-size: 2.2rem; }
+
+  .hero-content {
+    max-width: 250px;
+    padding-left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
   .culture-wrapper,
-  .benefits-wrapper { width: 80%; }
+  .benefits-wrapper {
+    width: 80%;
+  }
+
   .culture-wrapper h2,
-  .benefits-wrapper h2 { 
+  .benefits-wrapper h2 {
     font-size: 1.8rem;
     margin-bottom: 5px;
-    text-align: center; 
-}
+    text-align: center;
+  }
+
   .culture-text,
-  .benefits-text { font-size: 0.98rem; }
+  .benefits-text {
+    font-size: 0.98rem;
+  }
+
   .culture-text ul,
-  .benefits-text ul { padding-left: 1.1rem; }
+  .benefits-text ul {
+    padding-left: 1.1rem;
+  }
+
   .culture-text li,
-  .benefits-text li { 
-    font-size: 0.95rem; 
+  .benefits-text li {
+    font-size: 0.95rem;
     font-weight: 400;
   }
-  .jobs-grid { gap: 20px; width: 64%; }
+
+  .jobs-grid {
+    gap: 20px;
+    width: 64%;
+  }
+
   .job-card-pink,
-  .job-card-blue { padding: 16px; width: 90%}
-  .icon-wrapper { width: 72px; height: 72px; }
-  .icon-wrapper img { width: 72px; }
+  .job-card-blue {
+    padding: 16px;
+    width: 90%;
+  }
+
+  .icon-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .icon-wrapper img {
+    width: 72px;
+  }
+
 }
 
 @media (max-width: 360px) {
-  .hero { height: 20vh; }
-  .hero-content h1 { font-size: 1.45rem; }
-  .hero-content p  { font-size: 0.95rem; }
+  .hero {
+    height: 20vh;
+  }
+  .hero-content h1 {
+    font-size: 1.45rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
   .culture-wrapper,
-  .benefits-wrapper { width: 80%; }
+  .benefits-wrapper {
+    width: 80%;
+  }
   .culture-wrapper h2,
-  .benefits-wrapper h2 { 
+  .benefits-wrapper h2 {
     font-size: 1.7rem;
     margin-bottom: 5px;
     text-align: center;
- }
+  }
   .culture-text li,
-  .benefits-text li { 
-    font-size: 0.95rem; 
+  .benefits-text li {
+    font-size: 0.95rem;
     font-weight: 400;
-}
-  .jobs-grid { gap: 20px; width: 60%; }
+  }
+  .jobs-grid {
+    gap: 20px;
+    width: 60%;
+  }
 }
 
 @supports (background: url()) {
   @media (min-width: 769px) {
-    .hero { background: url('../img/hero-section-career.png') center/cover no-repeat; }
+    .hero {
+      background: url('../img/hero-section-career.png') center/cover no-repeat;
+    }
   }
 }
 

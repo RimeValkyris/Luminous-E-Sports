@@ -201,7 +201,11 @@ main {
   .social-links a img {
     transition: none !important;
   }
-  .social-links a:hover img { transform: none !important; box-shadow: none !important; filter: none !important; }
+  .social-links a:hover img {
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
 }
 
 .nav-links a {

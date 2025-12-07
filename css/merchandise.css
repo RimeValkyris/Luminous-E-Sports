@@ -244,7 +244,9 @@ body{
     font-size: 20px;
     margin: 8px 0 0 0;
 }
-.small-img-container h3{ display:none; }
+.small-img-container h3 {
+    display: none;
+}
 
 /* Card hover / focus effect (only on hover-capable devices) */
 .M-small-container{
