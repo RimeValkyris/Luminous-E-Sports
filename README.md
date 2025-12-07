@@ -36,7 +36,6 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - [@Sefqt](https://github.com/Sefqt)
 - [@danilauri-024](https://github.com/danilauri-024)
 - [@arjay garabillo](https://github.com/arjaygarabillo58-stack)
-- [@RimeValkyris](https://www.github.com/RimeValkyris)
 
 ## Changelogs
 ### 11/15/2025
