@@ -84,9 +84,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  /* Gradient background: top (dark navy) -> bottom (deep blue) */
+  /* Vertical linear gradient: top (#091221) -> middle (#0B0F29) -> bottom (#21345C) */
   background-color: #091221; /* fallback */
-  background-image: linear-gradient(180deg, #091221 0%, #21345C 100%);
+  background-image: linear-gradient(180deg, #091221 0%, #0B0F29 50%, #21345C 100%);
   color: #e0e0e0;
   font-family: 'Exo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -105,7 +105,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* match the page background for seamless header */
   background-color: #0B0F29;
+  background-image: none;
   padding: 1em 2em;
   border-bottom: none;
   position: relative;
@@ -146,9 +148,9 @@ main {
 }
 
 /* Keep nav links visually centered across desktop/tablet by absolute-centering
-   them within the header. This prevents logo/social widths from shifting
-   the visual center as the screen narrows. Only apply when hamburger is hidden. */
-@media (min-width: 1025px) {
+  them within the header. This prevents logo/social widths from shifting
+  the visual center as the screen narrows. Only apply when hamburger is hidden. */
+@media (min-width: 1237px) {
   .nav-links {
     position: absolute;
     left: 50%;
@@ -156,24 +158,20 @@ main {
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: auto;
-    z-index: 20;
+    /* Ensure nav links sit above logo/social hitboxes to avoid partial clickability */
+    z-index: 1001;
+  }
+  /* place the logo on the left side of the header on desktop */
+  .navbar-logo {
+    position: static;
+    justify-content: flex-start;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
   }
 }
 
-.nav-links a {
-  color: #ff007f;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  letter-spacing: 1.8px;
-  padding: 0.15rem 0.25rem;
-  font-family: 'Exo 2', sans-serif;
-  transition: color 0.3s ease;
-}
 
-.nav-links a:hover {
-  color: #ffffff;
-}
 
 .social-links {
   list-style: none;
@@ -184,18 +182,21 @@ main {
   align-items: center;
 }
 
-.social-links a {
-  display: inline-block;
+.nav-links a {
+  color: #ff007f; /* restored original pink */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 1.8px;
+  padding: 0.15rem 0.25rem;
+  font-family: 'Exo 2', sans-serif;
+  transition: color 0.3s ease;
 }
 
-.social-links img {
-  height: 24px;
-  width: 24px;
-  transition: filter 0.3s ease;
-}
-
-.social-links a:hover img {
-  filter: invert(80%) sepia(100%) saturate(500%) hue-rotate(300deg);
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ffffff; /* hover/focus to white */
+  outline: none;
 }
 
 .hamburger {
@@ -215,17 +216,24 @@ main {
   margin: 5px auto;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  background-color: #ff007f;
+  background-color: #fc0369;
   border-radius: 999px;
+  box-shadow: 0 0 10px rgba(252, 3, 105, 0.5);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1236px) {
   .navbar-logo img {
     height: 50px;
   }
   /* Center the logo horizontally on smaller screens */
   .navbar-logo {
     justify-content: center;
+  }
+  /* Ensure a consistent header height on mobile so elements can be
+     centered reliably and the mobile overlay can offset correctly. */
+  .navbar {
+    min-height: 64px;
+    padding: 0 1.5rem; /* reduce vertical padding to rely on min-height */
   }
   /* Position the hamburger as a right-side pill and vertically center it */
   .hamburger {
@@ -269,20 +277,67 @@ main {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 0;
+    padding-top: 64px; /* reserve space for header so items sit below it */
     flex-direction: column;
     background-color: #0B0F29;
+    background-image: none;
     width: 100%;
+    height: 100vh; /* cover the entire viewport */
+    overflow-y: auto; /* allow scrolling if menu exceeds viewport */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 9999; /* sit above all page content */
+  }
+
+    /* Removed mobile overlay logo */
+
+  /* When overlay is open, hide the header logo to avoid duplication */
+  /* Hide large header logo when overlay is open */
+  body.overlay-open .navbar-logo {
+    display: none;
+  }
+
+  body.overlay-open .navbar {
+    background-color: #0B0F29;
+    background-image: none;
+  }
+
+  body.overlay-open {
+    overflow: hidden;
+  }
+  /* Position the logo centered in the mobile overlay and above the close button */
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    /* vertically center the logo within the header to avoid overlap
+       with the hamburger and to match desktop alignment */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002; /* above .nav-menu (1000) and hamburger (1001) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  /* Slightly reduce logo size inside the overlay to fit the header */
+  .navbar-logo img {
+    height: 46px;
+    width: auto;
+    display: block;
   }
 
   /* ensure hamburger is visible on mobile */
-  .hamburger { display: flex; }
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
 
   .nav-menu.active {
     left: 0;
+    z-index: 1000;
   }
 
   .nav-links {
@@ -481,8 +536,10 @@ main {
 /* ========================================================================== */
 .site-footer {
   background-color: #0B0F29;
+  background-image: none;
   color: #dfe6ea;
   padding: 40px 2rem 28px;
+  margin-top: auto; /* ensure footer sticks to bottom when page content is short */
 }
 .site-footer .footer-inner {
   max-width: 1200px;
@@ -524,7 +581,7 @@ main {
   justify-content: center;
 }
 .footer-nav a {
-  color: #FC0369;
+  color: #ff007f;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1.8px;
@@ -568,7 +625,7 @@ main {
 }
 
 /* Tablet: stack brand and nav, keep bottom row */
-@media (max-width: 1024px) {
+@media (max-width: 1236px) {
   .footer-top {
     flex-direction: column;
     align-items: center;
@@ -607,3 +664,6 @@ main {
 }
 
 }
+
+
+

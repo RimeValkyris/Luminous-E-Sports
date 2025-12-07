@@ -28,9 +28,6 @@ Web Development Case Study for IT Department Technical Service Management Major,
   <img src="https://img.shields.io/badge/CSS-1572B6?logo=css&logoColor=white&style=for-the-badge" height="25" alt="css logo"  />
   <img width="5" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge" height="25" alt="javascript logo"  />
-  <img width="5" />
-  <img src="https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white&style=for-the-badge" height="25" alt="bootstrap logo"  />
-</div>
 
 ## Authors and Contributors
 
@@ -52,6 +49,14 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - applied the Navigation Menu and The Footer to all Webpages
 - Removed Test Variable Image in About Page
 
+### 12/2/2025
+- Merged initial styles for Merchandise Page
+- Added Margin in Merchandise Page
+
+### 12/3/2025
+- Home Page is somewhat semi completed
+- About page is started
+- Merchandise Page is being worked on
 
 ## Notes and Post Scripts
 

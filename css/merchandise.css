@@ -1,16 +1,20 @@
+
+body {
+    height: 5000px;
+
 body{
     height: 4795px;
 }
-.banner-container{
-  margin-top: 20px;
-  height: 220px;
-  position: relative;
-  
-  
 
+.banner-container {
+    margin-top: 20px;
+    background-color: #b3d4fc;
+    height: 220px;
+    position: relative;
 }
-.banner-text{
-    position:absolute ;
+
+.banner-text {
+    position: absolute;
     left: 480px;
     top: 70px;
     font-family: "Wix Madefor Display", sans-serif;
@@ -18,85 +22,91 @@ body{
     text-align: center;
     font-size: 50px;
 }
-.banner-image{
+
+.banner-image {
     width: 100%;
     height: 100%;
 }
-.img-container{
+
+.img-container {
     margin: 120px 100px 0px 100px;
     height: 560px;
     position: relative;
-    
 }
-.slide-fade{
-    height: 560px;
 
-}
-.slide-fade img{
+.img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.slide-fade{
-    display: none;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
 
-@keyframes fade{
-    from {opacity: .4}
-    to {opacity: 1}
-}
-.img-text{
+.img-text {
     position: absolute;
     bottom: 50px;
     left: 50px;
     font-weight: bold;
     line-height: 20px;
 }
-.M-big-container{
+
+.M-big-container {
     margin: 0px 45px;
     font-family: "Wix Madefor Display", sans-serif;
-
 }
-.M-big-container h1{
+
+.M-big-container h1 {
     font-size: 50px;
     color: white;
     margin-left: 50px;
 }
-.M-sub-container{
+
+.M-sub-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 60px;
-
-    
+    margin: 0 20px;
 }
-.M-small-container{
-     background-color: rgb(13, 21, 32);
-    height:550px;
+
+.M-small-container {
+    background-color: rgb(13, 21, 32);
+    height: 550px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgb(22, 83, 239);
 }
-.small-img-container{
+
+.small-img-container {
+    background-color: antiquewhite;
     height: 400px;
     overflow: hidden;
 }
-.small-img-container img{
+
+.small-img-container img {
     width: 100%;
     height: 100%;
     transform: scale(1.1);
     
 }
-.small-text-container{
+
+.small-text-container {
     line-height: 10px;
+
+    margin-top: 40px;
+    margin-left: 10px;
+
    margin-top: 40px;
    margin-left: 10px;
    padding-left: 15px;
+
 }
-.small-img-container h2{
+
+.small-img-container h2 {
     font-size: 60px;
 }
+
+
+.small-text-container p {
+    font-size: 14px;
+
 .small-text-container p{
     font-size: 12px;
 }
