@@ -66,7 +66,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - The Development on the Teams Page is also done, successfully merged
 
 ### 12/7/2025
--Successfully Merged Merchandise Page
+- Successfully Merged Merchandise Page
 - Fixed Issues that happened in Merchandise page such as:
     - The Merge conflict that happened
     - Media Queries Issue (Tablet Mode, and Mobile Phone Mode)
