@@ -1,0 +1,152 @@
+.news-page {
+  padding: 110px 0 75px;
+  background: #020617;
+  color: #f9fafb;
+}
+
+.news-page .container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.news-title{
+  font-family: "League Spartan", sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.news-intro{
+  max-width: 720px;
+  color: #9ea4b5;
+  font-size: .95rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.news-grid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.4rem;
+}
+
+.news-item{
+  position: relative;
+  background: #071022;
+  border-radius: 12px;
+  border: 1px solid rgba(70,110,255,.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 30px rgba(0,0,0,.55);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* main hover effect */
+.news-item:hover{
+  transform: translateY(-6px) scale(1.02);
+  border-color: #5b7cff;
+  box-shadow: 0 25px 55px rgba(0,0,0,.75);
+}
+
+/* blue glow + darken overlay */
+.news-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 18% 12%,
+              rgba(100,140,255,.35),
+              transparent 60%);
+  opacity:0;
+  transition: opacity .3s ease;
+  pointer-events:none;
+}
+
+.news-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0);
+  transition: background .25s ease;
+  pointer-events:none;
+}
+
+.news-item:hover::before{
+  opacity:1;
+}
+
+.news-item:hover::after{
+  background: rgba(0,0,0,.25);
+}
+
+/* image zoom */
+.news-image{
+  position: relative;
+  overflow:hidden;
+}
+
+.news-image img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  display:block;
+  transform: scale(1);
+  transition: transform .35s ease-out;
+}
+
+.news-item:hover .news-image img{
+  transform: scale(1.15);
+}
+
+.news-content{
+  padding: 1rem 1.2rem 1.25rem;
+}
+
+.news-content h2{
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  line-height: 1.4;
+  transition: color .2s ease;
+}
+
+.news-content p{
+  font-size: .88rem;
+  color:#9da5b3;
+  line-height:1.5;
+}
+
+/* title color shift on hover */
+.news-item:hover .news-content h2{
+  color: #8cb5ff;
+}
+
+/* responsive */
+@media (max-width: 1020px){
+  .news-grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media (max-width: 780px){
+  .news-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .news-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* center 9th card on desktop, same width feel */
+@media (min-width:1021px){
+  .news-item:nth-child(9){
+    grid-column: 1 / -1;
+    justify-self:center;
+    max-width: 260px;
+    width: 100%;
+  }
+}
