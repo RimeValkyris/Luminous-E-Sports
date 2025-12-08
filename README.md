@@ -35,7 +35,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - [@Gale-Carl23](https://github.com/Gale-Carl23)
 - [@Sefqt](https://github.com/Sefqt)
 - [@danilauri-024](https://github.com/danilauri-024)
-- [@arjay garabillo](https://github.com/arjaygarabillo58-stack)
+- [@loveradio1337](https://github.com/loveradio1337)
 
 ## Changelogs
 ### 11/15/2025
@@ -56,6 +56,31 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - Home Page is somewhat semi completed
 - About page is started
 - Merchandise Page is being worked on
+
+### 12/6/2025
+- Finished Home Page
+- About Page Finished
+- Merchandise Page is Halfway Done
+- Added Animations on Home Page, and About Page
+- Started the Development of Career Page
+- The Development on the Teams Page is also done, successfully merged
+
+### 12/7/2025
+-Successfully Merged Merchandise Page
+- Fixed Issues that happened in Merchandise page such as:
+    - The Merge conflict that happened
+    - Media Queries Issue (Tablet Mode, and Mobile Phone Mode)
+    - Footer becoming taller and overlaps the whole page
+    - The Size of the Merchandise Cards are too big that caused some big screens overlapping it.
+- The development on the Career Page is Done
+- Added Animations on Career Page
+- Added Animations on the Teams Page
+- Started the development on News Page
+- Added the Development's team pictures in the About Page, Management Section.
+
+### 12/8/2025
+  - Finished the Development on the News Page
+  - Image Placeholders are being used in the News Page
 
 ## Notes and Post Scripts
 
