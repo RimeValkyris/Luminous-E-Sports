@@ -77,6 +77,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 - Added Animations on the Teams Page
 - Started the development on News Page
 - Added the Development's team pictures in the About Page, Management Section.
+- Changed the name of the Repository (02-Project-Isolation-Forest -> Luminous-E-Sports)
 
 ### 12/8/2025
   - Finished the Development on the News Page
