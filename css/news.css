@@ -11,7 +11,7 @@
 }
 
 .news-title{
-  font-family: "League Spartan", sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-size: 2.4rem;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -35,7 +35,7 @@
 .news-item{
   position: relative;
   background: #071022;
-  border-radius: 12px;
+  border-radius: 3px;
   border: 1px solid rgba(70,110,255,.4);
   overflow: hidden;
   display: flex;

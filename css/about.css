@@ -754,13 +754,10 @@
 }
 .management-grid {
   display: grid;
-  /* three columns on wide screens; switch to 2 columns at the site-wide
-     navigation breakpoint so the layout remains balanced when header
-     collapses. Use a slightly larger gap so gradient borders don't touch. */
   grid-template-columns: repeat(3, 1fr);
   gap: 2.25rem;
   margin-top: 1rem;
-  align-items: stretch; /* make cards match heights for clean grid seams */
+  align-items: stretch;
 }
 .manager-card {
   background: rgba(255,255,255,0.02);

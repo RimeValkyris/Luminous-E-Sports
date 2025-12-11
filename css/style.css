@@ -105,7 +105,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* match the page background for seamless header */
   background-color: #0B0F29;
   background-image: none;
   padding: 1em 2em;
@@ -117,7 +116,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 2; /* Allow the menu to take up more space */
+  flex: 2; 
 }
 
 .navbar-logo {
@@ -147,9 +146,7 @@ main {
   flex: 1; /* Center within the available space */
 }
 
-/* Keep nav links visually centered across desktop/tablet by absolute-centering
-  them within the header. This prevents logo/social widths from shifting
-  the visual center as the screen narrows. Only apply when hamburger is hidden. */
+
 @media (min-width: 1237px) {
   .nav-links {
     position: absolute;
@@ -158,10 +155,10 @@ main {
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: auto;
-    /* Ensure nav links sit above logo/social hitboxes to avoid partial clickability */
+  
     z-index: 1001;
   }
-  /* place the logo on the left side of the header on desktop */
+
   .navbar-logo {
     position: static;
     justify-content: flex-start;

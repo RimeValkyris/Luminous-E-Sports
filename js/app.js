@@ -6,9 +6,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 function toggleMenu() {
   const isActive = hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
-  // update aria for accessibility
   hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
-  // mark overlay state on body to control logo visibility
   if (isActive) {
     document.body.classList.add('overlay-open');
   } else {
@@ -18,7 +16,6 @@ function toggleMenu() {
 
 if (hamburger) {
   hamburger.addEventListener("click", toggleMenu);
-  // allow keyboard activation
   hamburger.addEventListener("keydown", (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -27,7 +24,7 @@ if (hamburger) {
   });
 }
 
-// Close menu when a nav link is clicked (mobile behavior)
+
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (navMenu.classList.contains('active')) toggleMenu();

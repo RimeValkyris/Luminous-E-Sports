@@ -96,7 +96,6 @@
 	}
 }
 .players-inner {
-	/* center content and constrain width inside the full-bleed background */
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 16px 20px;
@@ -114,12 +113,11 @@
 }
 .players-grid {
 	display: grid;
-	/* default: larger cards (3 columns) on typical desktop widths */
+	
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
 }
 .player-card {
-	/* keep card transparent so only the photo shows; overlay provides white panel on hover */
 	background: transparent;
 	border-radius: 3px;
 	overflow: hidden;
@@ -128,7 +126,6 @@
 	flex-direction: column;
 	align-items: stretch;
 	transition: transform 220ms ease, box-shadow 220ms ease;
-	/* let card size be driven by its contents (image); remove forced min-height */
 	min-height: auto;
 	position: relative;
 	animation: fadeInUp 0.6s ease-out both;
