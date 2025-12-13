@@ -178,9 +178,12 @@ body {
 }
 
 .benefits-content img {
-    width: 500px;
-    max-width: 100%;
-    border-radius: 3px;
+  /* images inside the benefits area will size to their column;
+     the right column below reserves a fixed basis so the image
+     can match the culture image sizing on large screens */
+  width: 100%;
+  max-width: 100%;
+  border-radius: 3px;
 }
 
 /* Right column: heading above image, aligned to image edge */
@@ -189,6 +192,9 @@ body {
   flex-direction: column;
   align-items: flex-end; /* push heading to the right edge */
   gap: 12px;
+  /* reserve the same visual column width as the culture image
+     so the right-side image appears the same size on wide screens */
+  flex: 0 0 500px;
 }
 .benefits-right h2 {
   margin: 0 0 0 0;
@@ -196,8 +202,10 @@ body {
   font-size: 2.2rem;
 }
 .benefits-img {
-  width: 500px;
-  max-width: 100%;
+  /* fill the right column width so it visually matches the culture image
+     but remain responsive via max-width */
+  width: 100%;
+  max-width: 500px;
   border-radius: 3px;
   display: block;
   animation: scaleIn 0.7s ease-out 1.6s both;
@@ -396,9 +404,16 @@ body {
     gap: 80px;
     flex-wrap: nowrap;
   }
-  .culture-content img,
-  .benefits-content img {
+  .culture-content img {
     width: 420px;
+  }
+  /* make the right column reserve the same width and let the image
+     inside fill that column */
+  .benefits-right {
+    flex: 0 0 420px;
+  }
+  .benefits-img {
+    max-width: 420px;
   }
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -408,8 +423,19 @@ body {
   }
   .job-card-pink,
   .job-card-blue {
-    width: 280px;
-    height: 400px;
+    /* increase card size on tablet for better readability */
+    width: 340px;
+    height: 420px;
+    padding: 34px 28px;
+  }
+
+  /* scale up the circular icon on tablet so it feels more prominent */
+  .icon-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+  .icon-wrapper img {
+    width: 140px;
   }
 }
 

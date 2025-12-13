@@ -140,7 +140,11 @@
   line-height: 1.9; /* increased line height for improved reading */
   max-width: 820px; /* make text column a bit wider */
   margin: 0;
-  text-align: left;
+  /* Use justified text for better measure on wide layouts; keep
+     centered layout overridden in the mobile media query below. */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
   will-change: transform, opacity;
   opacity: 0; /* hidden initially for animation */
   transform: translateY(12px);
