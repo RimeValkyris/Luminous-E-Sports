@@ -83,6 +83,18 @@ Web Development Case Study for IT Department Technical Service Management Major,
   - Finished the Development on the News Page
   - Image Placeholders are being used in the News Page
 
+### 12/9/2025
+  - Removed all placeholder images, replaced it with the Dev Team's faces
+  - Added the check this out section in the merchandise page
+
+### 12/14/2025
+  - Printed the final documentation
+  - last commit of this repository will ever had
+  - The Dev team did a great job
+  - END OF WEB DEVELOPMENT MIDTERM AND FINAL TERM CASE STUDY PROJECT
+
+### END OF CHANGELOGS AT DAY 14TH OF THE 12TH OF THE MONTH OF THE YEAR 2025, TIME 10:32:21 HOURS.
+
 ## Notes and Post Scripts
 
 <sub><i>~~Managed to fucked up the mobile menu, so here's a snake with 1 functional brain cell.~~</i></sub>
