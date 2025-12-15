@@ -31,7 +31,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Timeline: animate items and draw vertical line when items enter viewport
+// Timeline
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const items = document.querySelectorAll('.timeline-item');
@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!items || items.length === 0) return;
 
-  // If user prefers reduced motion, reveal everything immediately
+
   if (prefersReducedMotion) {
     items.forEach(i => i.classList.add('in-view'));
     if (line) line.classList.add('drawn');
     return;
   }
 
-  // Track scroll direction so animations trigger only when scrolling down
+  // Track scroll 
   let lastScrollY = window.scrollY || window.pageYOffset || 0;
   let scrollDirection = 'down';
   window.addEventListener('scroll', () => {
@@ -58,10 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Only activate animations when user is scrolling downwards
         if (scrollDirection === 'down') {
           entry.target.classList.add('in-view');
-          // add drawn class to line the first time any item becomes visible
           if (line) line.classList.add('drawn');
         }
       }
@@ -78,7 +76,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// (counter initialization removed here — handled below via IntersectionObserver)
+
 
 // Carousel functionality
 let currentSlideIndex = 0;
@@ -139,7 +137,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Animated counter for tournament stats
+// Animated counter for tournament stats DO NOT ADJUST
 function animateCounter(element, target, duration = 2000, prefix = '', suffix = '') {
   const start = 0;
   const increment = target / (duration / 16);
@@ -179,13 +177,13 @@ newsCards.forEach(card => {
   });
 });
 
-// Partners spotlight hover (follow-mouse lit effect)
+
 document.addEventListener('DOMContentLoaded', () => {
   const partnerTiles = document.querySelectorAll('.partners-grid > div');
   if (!partnerTiles || partnerTiles.length === 0) return;
 
   partnerTiles.forEach(tile => {
-    // initialize CSS variables
+
     tile.style.setProperty('--px', '50%');
     tile.style.setProperty('--py', '50%');
 
@@ -254,23 +252,21 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Scroll animations removed — no-op placeholder
 
-// Tap-to-toggle player info overlay for touch devices
 (function() {
-  // Only enable on coarse pointers (most touch devices)
+
   const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
   if (!isTouch) return;
 
   const cards = document.querySelectorAll('.player-card');
   if (!cards || cards.length === 0) return;
 
-  // Helper to remove show state from all cards
+
   function clearAll() {
     cards.forEach(c => c.classList.remove('show-info'));
   }
 
-  // Close when tapping outside any card
+
   function onDocTouch(e) {
     if (!e.target.closest || !e.target.closest('.player-card')) {
       clearAll();
@@ -278,16 +274,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   cards.forEach(card => {
-    // use touchstart so the overlay appears immediately
+
     card.addEventListener('touchstart', (e) => {
       const already = card.classList.contains('show-info');
-      // remove from others
+  
       clearAll();
       if (!already) {
         card.classList.add('show-info');
-        // add a short-lived document listener to close when tapping elsewhere
         document.addEventListener('touchstart', onDocTouch, { passive: true });
-        // auto-hide after 6 seconds; clear any previous timer
         if (card.dataset.hideTimer) {
           clearTimeout(Number(card.dataset.hideTimer));
           delete card.dataset.hideTimer;
@@ -307,8 +301,7 @@ window.addEventListener('DOMContentLoaded', () => {
         card.classList.remove('show-info');
         document.removeEventListener('touchstart', onDocTouch);
       }
-      // prevent the touch from triggering other handlers
-      // allow event to continue if the target is an interactive element
+
       const interactive = e.target.closest('a, button, input, label');
       if (interactive) return;
       e.stopPropagation();
@@ -316,7 +309,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-// Enable hover-like effect while click-dragging across job cards
+// Enable hover-like effect
 document.addEventListener('DOMContentLoaded', () => {
   const jobsGrid = document.querySelector('.jobs-grid');
   if (!jobsGrid) return;
