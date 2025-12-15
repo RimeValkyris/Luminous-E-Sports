@@ -1,4 +1,4 @@
-
+/* START OF SECTION: BANNER */
 .teams-banner {
 	position: relative;
 	background-image: url('../img/TEAMS-BANNER.png');
@@ -74,9 +74,9 @@
 	font-size: 16px;
 	line-height: 1.5;
 }
+/* END OF SECTION: BANNER */
 
-
-
+/* START OF SECTION: PLAYERS */
 .players-section {
 	
 	width: 100%;
@@ -296,8 +296,9 @@
 		transition: none !important;
 	}
 }
+/* END OF SECTION: PLAYERS */
 
-
+/* START OF SECTION: COACHES */
 
 @media (min-width: 1600px) {
 	.player-photo {
@@ -493,9 +494,9 @@
 		height: 520px;
 	}
 }
+/* END OF SECTION: COACHES */
 
-
-
+/* START OF SECTION: ACHIEVEMENTS */
 .achievements-section {
 	width: 100%;
 	padding: 32px 0;
@@ -646,10 +647,7 @@
 		outline: none;
 	}
 }
-
-
-
-
+/* END OF SECTION: ACHIEVEMENTS */
 
 
 

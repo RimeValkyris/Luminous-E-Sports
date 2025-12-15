@@ -1,9 +1,11 @@
+/* START OF SECTION: BODY */
 body{
     min-height: 100vh;
     height: auto;
 }
+/* END OF SECTION: BODY */
 
-
+/* START OF SECTION: HERO CAROUSEL */
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -137,7 +139,9 @@ body{
 .carousel-btn {
   display: none !important;
 }
+/* END OF SECTION: HERO CAROUSEL */
 
+/* START OF SECTION: BANNER */
 .banner-container{
   margin-top: 20px;
   height: 220px;
@@ -164,7 +168,9 @@ body{
     height: 100%;
     object-fit: cover;
 }
+/* END OF SECTION: BANNER */
 
+/* START OF SECTION: MERCHANDISE GRID */
 .M-big-container{
     margin: 0px 45px;
     font-family: "Exo 2", sans-serif;
@@ -274,6 +280,9 @@ body{
 .prev, .next {
     display: none; 
 }
+/* END OF SECTION: MERCHANDISE GRID */
+
+/* START OF SECTION: CHECKOUT */
 #check-out-headertext{
     font-family: "Exo 2", sans-serif;
     font-size: 40px;
@@ -393,8 +402,9 @@ body{
 .site-footer{
     border-top: solid 1px rgb(22, 83, 239);
 }
+/* END OF SECTION: CHECKOUT */
 
-
+/* START OF SECTION: NEWSLETTER */
 .newsletter-cta {
     padding: 52px 18px 60px;
     margin: 0 auto 32px;
@@ -517,8 +527,9 @@ body{
         text-align: center;
     }
 }
+/* END OF SECTION: NEWSLETTER */
 
-
+/* START OF SECTION: MEDIA QUERIES */
 @media screen and (max-width: 768px) {
     .banner-container {
         height: 180px;
@@ -782,5 +793,4 @@ body{
         padding: 20px;
     }
 }
-
-
+/* END OF SECTION: MEDIA QUERIES */

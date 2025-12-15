@@ -1,3 +1,4 @@
+/* START OF SECTION: ROOT & BODY */
 :root {
     --font-sans: "Exo 2", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     --font-display: "Montserrat";
@@ -9,7 +10,9 @@ body {
     background-color: #0b1224;
     color: #fff;
 }
+/* END OF SECTION: ROOT & BODY */
 
+/* START OF SECTION: HERO */
 .hero {
     position: relative;
     background: url('../img/hero-section-career.png')
@@ -62,7 +65,9 @@ body {
     font-size: 1.2rem;
     color: #d1d5db;
 }
+/* END OF SECTION: HERO */
 
+/* START OF SECTION: CULTURE */
 .culture-section {
     padding-bottom: 20px;
     animation: fadeInUp 0.8s ease-out 0.5s both;
@@ -149,7 +154,9 @@ body {
 .culture-text li {
     margin-bottom: 4px; 
 }
+/* END OF SECTION: CULTURE */
 
+/* START OF SECTION: BENEFITS */
 .benefits-section {
     padding: 2.5rem 1.25rem 4rem;
     background-color: #0b1224;
@@ -231,8 +238,9 @@ body {
 .benefits-text li {
     margin-bottom: 4px;
 }
+/* END OF SECTION: BENEFITS */
 
-
+/* START OF SECTION: JOBS */
 .jobs-section {
   width: 100%;
   text-align: left;
@@ -379,7 +387,9 @@ body {
   transform-origin: center;
   will-change: transform;
 }
+/* END OF SECTION: JOBS */
 
+/* START OF SECTION: MEDIA QUERIES */
 @media (min-width: 901px) and (max-width: 1099px) {
   .hero {
     height: 55vh;
@@ -676,8 +686,9 @@ body {
     }
   }
 }
+/* END OF SECTION: MEDIA QUERIES */
 
-
+/* START OF SECTION: UTILITY & OVERRIDES */
 .benefits-section .benefits-wrapper h2 {
   font-size: 2.2rem !important;
 }
@@ -729,5 +740,4 @@ body {
     transform: none !important;
   }
 }
-
-
+/* END OF SECTION: UTILITY & OVERRIDES */
