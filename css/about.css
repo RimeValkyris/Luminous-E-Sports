@@ -10,18 +10,16 @@
   --shadow-strong: rgba(2,6,23,0.6);
 }
 
-/* About page specific styles (banner + overlay title) */
 
-/* Banner image styles: show the entire image responsively (no cropping) */
 .page-banner {
   width: 100%;
-  overflow: hidden; /* ensures layout stability if image is large */
-  position: relative; /* anchor for absolute title */
+  overflow: hidden; 
+  position: relative; 
 }
 .page-banner-img {
   display: block;
   width: 100%;
-  height: auto; /* preserve aspect ratio so whole image is visible */
+  height: auto; 
   max-width: 100%;
   z-index: 1;
   position: relative;
@@ -42,7 +40,7 @@
   text-align: center;
   z-index: 5;
   pointer-events: none;
-  /* default pink for outer words */
+
   background: linear-gradient(90deg, #ff2a7f 0%, #ff007f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -51,7 +49,7 @@
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 .banner-title .blue {
-  /* blue word override */
+ 
   background: linear-gradient(90deg, #2b78ff 0%, #0ea5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -66,7 +64,7 @@
   }
 }
 
-/* Contrast overlay and entrance animation for banner title */
+
 .page-banner::after {
   content: "";
   position: absolute;
@@ -388,9 +386,7 @@
   }
 }
 
-/* Further refine the timeline line for very small screens so it doesn't
-   overlap the header or feel too tall. This makes the connector lighter
-   and nudges it inward on narrow devices. */
+
 @media (max-width: 480px) {
   /* Use an even smaller left column on very small screens so the line and
      dot centers remain aligned. */
@@ -496,7 +492,7 @@
 }
 .value-thumb img {
   width: 100%;
-  height: 200px; /* increased image height for stronger visual impact */
+  height: 200px; 
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
@@ -504,7 +500,7 @@
   margin-bottom: 0.8rem;
 }
 
-/* For featured cards, make the image align with the card's top radius */
+
 .value-card.featured .value-thumb img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -533,23 +529,21 @@
   border-color: rgba(43,120,255,0.22);
 }
 
-/* Featured card sits centered below the top row */
+
 .value-card.featured {
-  /* make featured card the same width as a single grid column and center it
-     by allowing it to occupy the full row but constraining its width to the
-     computed single-column size. This keeps visual parity with other cards. */
-  grid-column: 1 / -1; /* occupy full row so we can center the card */
+  
+  grid-column: 1 / -1; 
   margin-top: 1.6rem;
   text-align: center;
   justify-self: center;
-  /* compute single column width: (container width - total gaps) / 4 */
+
   width: calc((100% - (3 * var(--values-gap))) / 4);
-  max-width: 360px; /* prevent it from becoming too wide on very large screens */
+  max-width: 360px; 
 }
 
-/* Make featured card image even larger */
+
 .value-card.featured .value-thumb img {
-  /* match standard card image height for consistent layout */
+
   height: 200px;
 }
 
@@ -559,7 +553,6 @@
   }
   .value-card.featured {
     grid-column: 1 / -1;
-    /* On narrower two-column layouts make featured card wider and centered */
     width: min(700px, 90%);
   }
 }
@@ -577,7 +570,7 @@
   .value-card {
     padding: 1rem;
   }
-  /* On single-column mobile ensure featured card spans the content area */
+
   .value-card.featured {
     width: 95%;
     max-width: none;
@@ -589,18 +582,16 @@
 
 
 
-/* Partners section (moved from inline styles) */
+
 .partners-section {
-  /* dark navy background to visually separate partners area */
+
   background: linear-gradient(180deg, rgba(8,18,34,0.92) 0%, rgba(6,12,24,0.86) 100%);
-  /* match horizontal padding with management section so text aligns */
   padding: 3.5rem 1rem 4rem;
   border-top: 1px solid rgba(255,255,255,0.02);
   border-bottom: 1px solid rgba(255,255,255,0.02);
   backdrop-filter: blur(4px);
 }
 .partners-inner {
-  /* Match management container width so headings/paragraphs align */
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -614,7 +605,6 @@
 .partners-header p {
   margin: 0;
   color: var(--muted);
-  /* match management paragraph width for consistent alignment */
   max-width: 80ch;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -622,7 +612,6 @@
 }
 .partners-grid {
   display: grid;
-  /* Allow columns to grow so logos can be larger on wide layouts */
   grid-template-columns: repeat(4, minmax(180px, 1fr));
   gap: 2.25rem;
   align-items: center;
@@ -639,7 +628,6 @@
   align-items: center;
 }
 .partners-grid img {
-  /* increase max width so logos appear larger */
   max-width: 220px;
   width: 100%;
   height: auto;
@@ -648,7 +636,7 @@
   filter: none;
 }
 
-/* Spotlight hover effect on partner tiles */
+
 .partners-grid > div {
   position: relative;
   overflow: visible;
@@ -679,7 +667,7 @@
   filter: drop-shadow(0 18px 30px rgba(2,6,23,0.45));
 }
 
-/* Extra-large screens: allow even bigger logos */
+
 @media (min-width: 1400px) {
   .partners-grid {
     grid-template-columns: repeat(4, minmax(220px, 1fr));
@@ -765,7 +753,7 @@
 }
 .manager-card {
   background: rgba(255,255,255,0.02);
-  border: 2px solid transparent; /* gradient border via border-image */
+  border: 2px solid transparent; 
   border-radius: 12px;
   padding: 1.3rem 1rem 1.6rem;
   text-align: center;
@@ -774,11 +762,11 @@
   transition: transform .22s cubic-bezier(.22,.9,.35,1), box-shadow .22s ease, border-color .22s ease;
   border-image: linear-gradient(90deg,#ff2a7f,#fc0369) 1;
   position: relative;
-  box-sizing: border-box; /* ensure padding+borders don't alter layout math */
+  box-sizing: border-box; 
   display: flex;
-  flex-direction: column; /* allow content to stretch vertically */
+  flex-direction: column; 
   justify-content: flex-start;
-  min-height: 220px; /* prevents very short cards so grid rows align better */
+  min-height: 220px;
 }
 .manager-card:hover {
   transform: translateY(-6px);
@@ -828,7 +816,7 @@
   font-size: 1rem;
 }
 
-/* Hierarchy layout tweaks (class-based): primary leader, leaders, staff */
+
 .management-grid {
   justify-items: center;
   display: grid;
@@ -850,14 +838,14 @@
   width: 100%;
 }
 
-/* Primary leader spans full width and is centered (keeps layout but unified sizing) */
+
 .management-grid .leader-primary {
   grid-column: 1 / -1;
   justify-self: center;
   margin-bottom: 1rem;
 }
 
-/* Unified sizes for all manager cards and avatars */
+
 .management-grid .manager-card {
   max-width: 360px;
   width: 100%;
@@ -1253,7 +1241,7 @@
   border-radius: 40px;
   font-weight: 900;
   color: #fff;
-  /* lighter: increase alpha for more visible button */
+
   background-color: rgba(255,255,255,0.06);
   box-shadow: 0 14px 36px rgba(255,255,255,0.06);
   text-decoration: none;

@@ -3,7 +3,7 @@ body{
     height: auto;
 }
 
-/* Hero Carousel styles - matching index.css */
+
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -133,7 +133,7 @@ body{
   transform: scale(1.2);
 }
 
-/* Hide carousel arrow buttons if you want them hidden like on home page */
+
 .carousel-btn {
   display: none !important;
 }
@@ -179,7 +179,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 60px;
-    /* make grid items stretch to the tallest item so cards are equal-height */
+    
     align-items: stretch;
     max-width: 1320px;
     margin: 0 auto;
@@ -200,7 +200,7 @@ body{
     max-width: 280px;
 }
 .small-img-container{
-    /* keep a consistent image box ratio and let the image cover it */
+    
     aspect-ratio: 3 / 4;
     width: 100%;
     overflow: hidden;
@@ -209,7 +209,7 @@ body{
 .small-img-container img{
     width: 100%;
     height: 100%;
-    object-fit: cover; /* preserve natural aspect ratio and crop as needed */
+    object-fit: cover; 
     display: block;
     transform: scale(1.03);
     transition: transform 220ms ease;
@@ -223,7 +223,7 @@ body{
     display: block;
 }
 .small-text-container{
-    /* allow text area to expand so cards share equal height */
+    
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -248,7 +248,7 @@ body{
     display: none;
 }
 
-/* Card hover / focus effect (only on hover-capable devices) */
+
 .M-small-container{
     transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
     will-change: transform;
@@ -262,7 +262,7 @@ body{
         cursor: pointer;
     }
 }
-/* Keyboard accessibility: provide same visible focus styles when focused */
+
 .M-small-container:focus-within{
     outline: 2px solid rgba(49,77,223,0.12);
 }
@@ -270,7 +270,7 @@ body{
     display: contents; 
 }
 
-/* Hide navigation buttons on desktop */
+
 .prev, .next {
     display: none; 
 }
@@ -281,7 +281,7 @@ body{
     margin: 0 0 30px 0;
 }
 .M-medium-container{
-    /* Center the section and prevent huge fixed margins on small viewports */
+    
     width: min(1200px, 100%);
     margin: 60px auto;
     padding: 0 16px;
@@ -293,7 +293,7 @@ body{
 }
 
 .M-medsub-container{
-    /* Responsive grid so cards naturally wrap instead of squeezing */
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     width: 100%;
@@ -394,7 +394,7 @@ body{
     border-top: solid 1px rgb(22, 83, 239);
 }
 
-/* Newsletter / CTA */
+
 .newsletter-cta {
     padding: 52px 18px 60px;
     margin: 0 auto 32px;
@@ -518,7 +518,7 @@ body{
     }
 }
 
-/* Tablet and smaller screens */
+
 @media screen and (max-width: 768px) {
     .banner-container {
         height: 180px;
@@ -584,7 +584,7 @@ body{
     }
 }
 
-/* Mobile screens */
+
 @media screen and (max-width: 430px) {
     .banner-container {
         height: 140px;
@@ -601,7 +601,7 @@ body{
   
 }
 
-/* Adjust hero carousel for mobile */
+
 .hero-carousel {
     height: 50vh;
     min-height: 280px;
@@ -716,7 +716,7 @@ body{
 
 }
 }
-/* Responsive breakpoints for merchandise cards and containers */
+
 @media screen and (max-width: 1200px) {
     .M-sub-container {
         grid-template-columns: repeat(3, 1fr);
@@ -726,14 +726,14 @@ body{
         width: 90%;
         margin: 40px auto;
     }
-    /* ensure cards remain visually consistent */
+    
     .M-small-container {
         min-height: 520px;
     }
 }
 
 @media screen and (max-width: 900px) {
-    /* Back to grid on tablets: two columns */
+    
     .M-sub-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -754,7 +754,7 @@ body{
 }
 
 @media screen and (max-width: 600px) {
-    /* Single column on phones */
+    
     .M-sub-container {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -782,3 +782,5 @@ body{
         padding: 20px;
     }
 }
+
+

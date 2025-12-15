@@ -1,5 +1,5 @@
-/* Hero Carousel styles */
-/* ========================================================================== */
+
+
 
 :root {
   --font-sans: "Exo 2", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -58,7 +58,7 @@ h4 {
   box-sizing: border-box;
   padding: 0 1.25rem;
   overflow: hidden;
-  /* make the container transparent so underlying page/background shows through */
+  
   background: transparent;
   border-radius: 14px;
 }
@@ -120,8 +120,7 @@ h4 {
   line-height: 1.4;
 }
 
-/* Tighten spacing: remove default heading/paragraph margins so subtitle sits
-   closer to the heading. Kept a small gap for readability. */
+
 .carousel-content h2,
 .carousel-content p {
   margin: 0;
@@ -181,14 +180,14 @@ h4 {
   transform: scale(1.2);
 }
 
-/* Remove/hide the carousel arrow buttons (prev/next) */
+
 .carousel-btn {
   display: none !important;
 }
 
-/* News highlight section */
+
 .news-highlight {
-  /* increased top spacing so the 'Trending Reports' eyebrow has room above */
+  
   margin: 5.5rem 0 0;
   padding: 3.5rem 1.25rem 4rem;
   background: linear-gradient(180deg, rgba(6, 12, 30, 0.95), rgba(7, 15, 43, 0.92));
@@ -198,7 +197,7 @@ h4 {
 
 @media (max-width: 760px) {
   .news-highlight {
-    margin-top: 3.5rem; /* keep compact spacing on small screens */
+    margin-top: 3.5rem; 
     padding-top: 2.0rem;
   }
 }
@@ -206,7 +205,7 @@ h4 {
 .news-highlight__intro {
   text-align: left;
   max-width: 720px;
-  /* slightly moved right */
+  
   margin: 0 0 2.5rem 40px;
 }
 
@@ -232,7 +231,7 @@ h4 {
   text-align: left;
 }
 
-/* On smaller screens keep the intro centered for better layout */
+
 @media (max-width: 760px) {
   .news-highlight__intro {
     margin-left: 0;
@@ -246,8 +245,8 @@ h4 {
 
 .news-card-grid {
   display: grid;
-  /* center a row of fixed-width cards similar to the reference */
-  /* wider cards per request */
+  
+  
   grid-template-columns: repeat(3, 380px);
   gap: 2rem;
   grid-auto-rows: 1fr;
@@ -280,7 +279,7 @@ h4 {
 
 .news-card__image {
   width: 100%;
-  /* taller image to keep proportions with wider cards */
+  
   height: 270px;
   flex: 0 0 270px;
   overflow: hidden;
@@ -349,7 +348,7 @@ h4 {
   background: rgba(255, 72, 143, 0.1);
 }
 
-/* Tournament Section */
+
 .tournament-section {
   max-width: 1200px;
   margin: 3.5rem auto 0;
@@ -362,7 +361,7 @@ h4 {
   gap: 2rem;
 }
 
-/* Match Schedule */
+
 .match-schedule h2 {
   color: #e0e0e0;
   font-family: "Exo 2", sans-serif;
@@ -435,7 +434,7 @@ h4 {
   font-family: "Exo 2", sans-serif;
 }
 
-/* Tournament Standing */
+
 .tournament-standing {
   background: linear-gradient(145deg, rgba(7, 15, 43, 0.95), rgba(6, 12, 36, 0.9));
   border: 2px solid #1e3a8a;
@@ -624,7 +623,7 @@ h4 {
 }
 
 
-/* Responsive Carousel */
+
 @media (max-width: 768px) {
   .hero-carousel {
     height: 40vh;
@@ -699,14 +698,14 @@ h4 {
     font-size: 1.1rem;
   }
 
-  /* slightly smaller dots on small screens */
+  
   .dot {
     width: 7px;
     height: 7px;
   }
 }
 
-/* Responsive Tournament Section */
+
 @media (max-width: 1236px) {
   .tournament-container {
     grid-template-columns: 1fr;
@@ -721,7 +720,7 @@ h4 {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 
-  /* Featured Team responsive at tablet size */
+  
   .teams-feature {
     padding: 2.5rem 1.5rem 3.5rem;
   }
@@ -755,7 +754,7 @@ h4 {
   }
 }
 
-/* Added missing tablet media query for footer */
+
 @media (max-width: 768px) {
   .tournament-section {
     padding: 0 1rem 3rem;
@@ -895,7 +894,7 @@ h4 {
   }
 }
 
-/* Extra small screens: tighten heading further */
+
 @media (max-width: 480px) {
   .teams-feature {
     padding: 1.75rem 0.5rem 2.25rem;
@@ -943,7 +942,7 @@ h4 {
   }
 }
 
-/* Very small screens (360px and below) */
+
 @media (max-width: 360px) {
   .teams-feature {
     padding: 1.5rem 0.5rem 2rem;
@@ -1003,7 +1002,7 @@ h4 {
   }
 }
 
-/* Featured Teams Section */
+
 .teams-feature {
   margin: 3.5rem 0 0;
   padding: 3rem 1.25rem 4rem;
@@ -1056,7 +1055,7 @@ h4 {
   box-shadow: 0 24px 55px rgba(2, 6, 20, 0.66);
 }
 
-/* Subtle glow/ripple effect on hover */
+
 .teams-feature__card::after {
   content: "";
   position: absolute;
@@ -1181,7 +1180,7 @@ h4 {
   }
 }
 
-/* Testimonials Section */
+
 .testimonials {
   margin: 4rem 0 0;
   padding: 4rem 1.25rem 5rem;
@@ -1335,7 +1334,7 @@ h4 {
   margin: 0;
 }
 
-/* Responsive Testimonials */
+
 @media (max-width: 768px) {
   .testimonials {
     padding: 3rem 1rem 4rem;
@@ -1375,7 +1374,7 @@ h4 {
   }
 }
 
-/* Follow Us Section */
+
 .follow-us {
   margin: 4rem 0 0;
   padding: 4rem 1.25rem 5rem;
@@ -1449,7 +1448,7 @@ h4 {
   max-width: 1400px;
   margin: 0 auto;
 }
-/* Accessible focus styles */
+
 a, button {
   outline: none;
 }
@@ -1558,7 +1557,7 @@ button:focus-visible {
   color: #e0e8f0;
 }
 
-/* Responsive Follow Us Section */
+
 @media (max-width: 1200px) {
   .follow-us__socials {
     grid-template-columns: repeat(3, 1fr);
@@ -1628,3 +1627,6 @@ button:focus-visible {
     height: 56px;
   }
 }
+
+
+

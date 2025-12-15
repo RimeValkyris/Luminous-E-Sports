@@ -12,7 +12,7 @@
 
 .news-title{
   font-family: "Exo 2", sans-serif;
-  /* reduced size for more compact heading */
+  
   font-size: clamp(2rem, 3.5vw, 3rem);
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -22,7 +22,7 @@
 .news-intro{
   max-width: 720px;
   color: #9ea4b5;
-  /* reduced subtitle size */
+  
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   line-height: 1.6;
   margin-bottom: 40px;
@@ -30,7 +30,7 @@
 
 .news-grid{
   display: grid;
-  /* fixed to a 3-column layout for a 3x3 page on desktop */
+  
   grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 2rem;
 }
@@ -47,14 +47,14 @@
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-/* main hover effect */
+
 .news-item:hover{
   transform: translateY(-6px) scale(1.02);
   border-color: #5b7cff;
   box-shadow: 0 25px 55px rgba(0,0,0,.75);
 }
 
-/* blue glow + darken overlay */
+
 .news-item::before{
   content:"";
   position:absolute;
@@ -84,7 +84,7 @@
   background: rgba(0,0,0,.25);
 }
 
-/* image zoom */
+
 .news-image{
   position: relative;
   overflow:hidden;
@@ -92,7 +92,7 @@
 
 .news-image img{
   width:100%;
-  height:240px; /* increased height for stronger visual impact */
+  height:240px; 
   object-fit:cover;
   display:block;
   transform: scale(1);
@@ -104,7 +104,7 @@
 }
 
 .news-content{
-  padding: 1.25rem 1.4rem 1.5rem; /* slightly larger padding to balance increased image */
+  padding: 1.25rem 1.4rem 1.5rem; 
 }
 
 .news-content h2{
@@ -120,12 +120,12 @@
   line-height:1.5;
 }
 
-/* title color shift on hover */
+
 .news-item:hover .news-content h2{
   color: #8cb5ff;
 }
 
-/* responsive */
+
 @media (max-width: 1020px){
   .news-grid{
     grid-template-columns: repeat(3,1fr);
@@ -154,5 +154,8 @@
   }
 }
 
-/* center 9th card on desktop, same width feel */
-/* desktop layout is 3 columns; no special centering for the 9th card needed */
+
+
+
+
+

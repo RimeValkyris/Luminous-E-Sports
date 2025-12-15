@@ -166,7 +166,7 @@ body {
   font-size: 2.6rem;
   margin-bottom: 20px;
   text-align: right;
-  /* keep heading width same as image and align to right edge */
+  
   max-width: 500px;
   margin-left: auto;
 }
@@ -178,22 +178,19 @@ body {
 }
 
 .benefits-content img {
-  /* images inside the benefits area will size to their column;
-     the right column below reserves a fixed basis so the image
-     can match the culture image sizing on large screens */
+  
   width: 100%;
   max-width: 100%;
   border-radius: 3px;
 }
 
-/* Right column: heading above image, aligned to image edge */
+
 .benefits-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* push heading to the right edge */
+  align-items: flex-end; 
   gap: 12px;
-  /* reserve the same visual column width as the culture image
-     so the right-side image appears the same size on wide screens */
+  
   flex: 0 0 500px;
 }
 .benefits-right h2 {
@@ -202,8 +199,7 @@ body {
   font-size: 2.2rem;
 }
 .benefits-img {
-  /* fill the right column width so it visually matches the culture image
-     but remain responsive via max-width */
+  
   width: 100%;
   max-width: 500px;
   border-radius: 3px;
@@ -286,7 +282,7 @@ body {
   padding-bottom: 50px;
 }
 
-/* Stagger animation for job cards */
+
 .jobs-grid .job-card-pink:nth-child(1),
 .jobs-grid .job-card-blue:nth-child(1) {
   animation-delay: 2.0s;
@@ -361,9 +357,9 @@ body {
   line-height: 1.4;
 }
 
-/* Animations removed — keeping hover/drag styles below */
 
-/* Hover / dragging styles for job cards */
+
+
 .job-card-pink:hover,
 .job-card-pink.dragging {
   transform: translateY(-10px) scale(1.03);
@@ -377,7 +373,7 @@ body {
   border-color: #3b82f6;
 }
 
-/* ensure transform origin and preserve 3d for smooth effect */
+
 .job-card-pink,
 .job-card-blue {
   transform-origin: center;
@@ -407,8 +403,7 @@ body {
   .culture-content img {
     width: 500px;
   }
-  /* make the right column reserve the same width and let the image
-     inside fill that column */
+  
   .benefits-right {
     flex: 0 0 500px;
   }
@@ -423,13 +418,13 @@ body {
   }
   .job-card-pink,
   .job-card-blue {
-    /* increase card size on tablet for better readability */
+    
     width: 340px;
     height: 420px;
     padding: 34px 28px;
   }
 
-  /* scale up the circular icon on tablet so it feels more prominent */
+  
   .icon-wrapper {
     width: 140px;
     height: 140px;
@@ -682,7 +677,7 @@ body {
   }
 }
 
-/* Force smaller, page-specific headings in case other rules or cache override them */
+
 .benefits-section .benefits-wrapper h2 {
   font-size: 2.2rem !important;
 }
@@ -699,7 +694,7 @@ body {
   font-size: 0.95rem !important;
 }
 
-/* Paragraph justification for the career page */
+
 .hero-content p,
 .culture-text p,
 .benefits-text p,
@@ -711,7 +706,7 @@ body {
   hyphens: auto;
 }
 
-/* Accessibility: Respect reduced motion preference */
+
 @media (prefers-reduced-motion: reduce) {
   .hero,
   .hero-content,
@@ -734,3 +729,5 @@ body {
     transform: none !important;
   }
 }
+
+

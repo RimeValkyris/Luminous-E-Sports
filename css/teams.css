@@ -1,10 +1,10 @@
-/* Teams page banner styles. Uses image asset: img/TEAMS-BANNER.jpg */
+
 .teams-banner {
 	position: relative;
 	background-image: url('../img/TEAMS-BANNER.png');
 	background-size: cover;
 	background-position: center;
-	/* centered, limited width */
+	
 	max-width: 1400px;
 	width: calc(100% - 48px);
 	margin: 24px auto;
@@ -76,11 +76,11 @@
 }
 
 
-/* Player cards styles */
+
 .players-section {
-	/* full-bleed background: spans edge-to-edge of the viewport */
+	
 	width: 100%;
-	padding: 36px 0; /* vertical spacing; horizontal padding handled by inner container */
+	padding: 36px 0; 
 	background: linear-gradient(180deg, rgba(11,19,41,0.6), rgba(8,15,35,0.6));
 	border-radius: 0;
 	box-shadow: none;
@@ -142,7 +142,7 @@
 	}
 }
 
-/* Stagger animation for each player card */
+
 .player-card:nth-child(1) {
 	animation-delay: 0.7s;
 }
@@ -168,13 +168,13 @@
 }
 .player-photo {
 	width: 100%;
-	/* force a uniform, taller photo height for consistent grid */
+	
 	height: 460px;
 	background: #111;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* ensure the image area respects the card's rounding */
+	
 	mask-image: radial-gradient(rgb(245, 245, 245), black);
 	-webkit-mask-image: -webkit-radial-gradient(white, black);
 	overflow: hidden;
@@ -191,7 +191,7 @@
 	transform: scale(1.08);
 }
 .player-info {
-	/* overlay box that appears on hover */
+	
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -211,7 +211,7 @@
 	opacity: 1;
 }
 
-/* Show overlay when toggled via JS on touch devices */
+
 .player-card.show-info .player-info {
 	transform: translateY(0);
 	opacity: 1;
@@ -232,7 +232,7 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	/* socials removed visually */
+	
 	display: none !important;
 }
 .player-socials li img {
@@ -241,27 +241,27 @@
 	display: block;
 }
 
-/* Responsive tweaks */
-/* Medium screens */
+
+
 @media (max-width: 1100px) {
 	.player-photo {
 		height: 480px;
 	}
 }
 
-/* Smaller tablets / large phones */
+
 @media (max-width: 900px) {
-	/* make photos taller on smaller devices for a stronger visual */
+	
 	.player-photo {
 		height: 460px;
 	}
 }
 
-/* Mobile phones */
 
-/* Outline on hover and keyboard-focus for better affordance */
+
+
 @media (hover: hover) and (pointer: fine) {
-	/* Remove colored rings: use a subtle neutral focus ring for accessibility */
+	
 	.player-card:focus-within,
 	.coach-card:focus-within,
 	.achievement-item:focus-within {
@@ -269,13 +269,13 @@
 		outline: none;
 	}
 
-	/* Keep achievement border reinforcement on hover (no colored rings) */
+	
 	.achievement-item:hover {
 		border-color: var(--team-color, #FC0369);
 	}
 }
 
-/* Respect reduced motion preference: disable translate/box-shadow transitions */
+
 @media (prefers-reduced-motion: reduce) {
 	.player-card,
 	.coach-card,
@@ -298,16 +298,16 @@
 }
 
 
-/* Extra-large screens: increase photo size further */
+
 @media (min-width: 1600px) {
 	.player-photo {
 		height: 520px;
 	}
 }
 
-/* Note: no mobile fallback — overlay appears only on hover */
+
 @media (max-width: 560px) {
-    /* Mobile phones: slightly shorter photos and single-column layout */
+    
 	.player-photo {
 		height: 380px;
 	}
@@ -317,7 +317,7 @@
 	.players-heading {
 		font-size: 22px;
 	}
-	/* slightly reduce card name/role sizes on very small screens */
+	
 	.player-name,
 	.coach-name {
 		font-size: 18px;
@@ -328,7 +328,7 @@
 	}
 }
 
-/* Extra-large screens: show 4 columns */
+
 @media (min-width: 1400px) {
 	.players-grid {
 		grid-template-columns: repeat(4, 1fr);
@@ -336,9 +336,9 @@
 }
 
 
-/* Coaches section styles (two-card layout) */
+
 .coaches-section {
-	/* full-bleed background to match players section */
+	
 	width: 100%;
 	padding: 36px 0;
 	background: linear-gradient(180deg, rgba(11,19,41,0.6), rgba(8,15,35,0.6));
@@ -347,7 +347,7 @@
 	animation: fadeIn 0.8s ease-out 1.3s both;
 }
 .coaches-inner {
-	/* center content and constrain width inside the full-bleed background */
+	
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 16px 20px;
@@ -363,7 +363,7 @@
 	margin: 0 0 18px 0;
 }
 .coaches-grid {
-	/* left-align fixed-width coach cards so they sit under the heading */
+	
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -379,13 +379,13 @@
 	flex-direction: column;
 	transition: transform 220ms ease, box-shadow 220ms ease;
 	position: relative;
-	/* fixed width matching player card in 3-column layout */
+	
 	width: 435px;
 	box-sizing: border-box;
 	animation: fadeInUp 0.6s ease-out both;
 }
 
-/* Stagger animation for coach cards */
+
 .coach-card:nth-child(1) {
 	animation-delay: 1.5s;
 }
@@ -456,13 +456,13 @@
 }
 
 @media (min-width: 1400px) {
-	/* on very wide screens player grid becomes 4 columns; player-card width is 320px there */
+	
 	.coach-card {
 		width: 320px;
 	}
 }
 @media (max-width: 1400px) {
-	/* below very wide screens keep coach cards at the 3-column player width (435px) */
+	
 	.coach-card {
 		width: 435px;
 	}
@@ -495,7 +495,7 @@
 }
 
 
-/* Achievements / results list */
+
 .achievements-section {
 	width: 100%;
 	padding: 32px 0;
@@ -546,7 +546,7 @@
 	}
 }
 
-/* Stagger animation for achievement items */
+
 .achievement-item:nth-child(1) {
 	animation-delay: 1.9s;
 }
@@ -578,7 +578,7 @@
 .achievement-title {
 	color: rgba(255,255,255,0.95);
 	font-weight: 600;
-	/* sit to the left of the trophy */
+	
 	margin-left: auto;
 	margin-right: 12px;
 	flex: 0 1 auto;
@@ -606,13 +606,13 @@
 	.achievement-date {
 		width: auto;
 	}
-	/* on narrow screens clear the right-aligned behavior so title flows normally */
+	
 	.achievement-title {
 		margin-left: 0;
 		margin-right: 0;
 	}
 }
-/* Hover lift for cards and achievement rows (applies only on hover-capable devices) */
+
 @media (hover: hover) and (pointer: fine) {
 	.player-card,
 	.coach-card,
@@ -624,21 +624,21 @@
 
 	.player-card:hover,
 	.coach-card:hover {
-		/* keep previous visual intent but slightly stronger on capable devices */
+		
 		transform: translateY(-10px);
 		box-shadow: 0 18px 40px rgba(6,10,20,0.22),
-			/* subtle blue glow */
+			
 			0 0 18px 4px rgba(22,83,239,0.12);
 	}
 
 	.achievement-item:hover {
 		transform: translateY(-6px);
 		box-shadow: 0 12px 28px rgba(6,10,20,0.18),
-			/* subtle blue glow (smaller) */
+			
 			0 0 12px 3px rgba(22,83,239,0.10);
 	}
 
-	/* keyboard focus: blue glowing outline for accessibility */
+	
 	.player-card:focus-within,
 	.coach-card:focus-within,
 	.achievement-item:focus-within {
@@ -646,6 +646,9 @@
 		outline: none;
 	}
 }
+
+
+
 
 
 
