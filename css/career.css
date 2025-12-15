@@ -384,7 +384,7 @@ body {
   will-change: transform;
 }
 
-@media (min-width: 769px) and (max-width: 1099px) {
+@media (min-width: 901px) and (max-width: 1099px) {
   .hero {
     height: 55vh;
   }
@@ -405,15 +405,15 @@ body {
     flex-wrap: nowrap;
   }
   .culture-content img {
-    width: 420px;
+    width: 500px;
   }
   /* make the right column reserve the same width and let the image
      inside fill that column */
   .benefits-right {
-    flex: 0 0 420px;
+    flex: 0 0 500px;
   }
   .benefits-img {
-    max-width: 420px;
+    max-width: 500px;
   }
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -439,7 +439,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 901px) {
   .jobs-grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
@@ -471,7 +471,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero {
     height: 30vh;
     background: url('../img/hero-section-career.png') center/cover no-repeat;
