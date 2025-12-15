@@ -510,6 +510,18 @@ body {
   }
   .benefits-content {
     flex-direction: column-reverse;
+    gap: 0;
+  }
+  .benefits-right {
+    flex: 1 1 auto;
+    gap: 0;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .benefits-right h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
   }
   .culture-content img,
   .benefits-img {
