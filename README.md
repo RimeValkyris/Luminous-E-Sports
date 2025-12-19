@@ -97,7 +97,7 @@ Web Development Case Study for IT Department Technical Service Management Major,
 
 ## Notes and Post Scripts
 
-<sub><i>~~Managed to fucked up the mobile menu, so here's a snake with 1 functional brain cell.~~</i></sub>
+<sub><i>~~Managed to mess up the mobile menu, so here's a snake with 1 functional brain cell.~~</i></sub>
 
 <div align="left">
   <img height="200" src="https://cdn.donmai.us/original/56/65/__hissabeth_reverse_1999_drawn_by_baizangze__5665257a73e935378ebcfc854e8a230b.jpg"  />
